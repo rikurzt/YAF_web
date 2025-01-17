@@ -1,8 +1,9 @@
 <script setup lang="ts">
 
 import {ref, inject } from 'vue'
-import HomePage from "./views/HomePage.vue";
+
 import Navbar_and_Sidebar from "./components/Navbar_and_Sidebar.vue";
+import Footer from "./components/Footer.vue";
 
 
 const fullPage = ref(true)
@@ -21,20 +22,18 @@ setTimeout(() => {
 
 <template>
   <Navbar_and_Sidebar/>
-  <router-view></router-view>
+  <div class="container-fluid">
+    <router-view></router-view>
+  </div>
+
+  <Footer/>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+
+.container-fluid{
+  width: 100vw;
+  height: 100%;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>

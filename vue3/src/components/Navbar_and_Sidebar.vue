@@ -80,18 +80,18 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
-          <ul class="list-group">
+          <ul class="list-group"
+              data-bs-dismiss="offcanvas">
             <li
                 v-for="(menu, index) in menus"
                 :key="'sidebar-' + index"
                 class="list-group-item"
-                data-bs-dismiss="offcanvas"
             >
               <router-link
                   v-if="menu.children.length === 0"
                   :to="menu.link"
                   class="text-decoration-none"
-                  @click="closeSidebar"
+
               >
                 {{ menu.name }}
               </router-link>
@@ -103,7 +103,7 @@
                   role="button"
                   aria-expanded="false"
                   :aria-controls="'sidebarSubmenu' + index"
-
+                  data-bs-dismiss="offcanvas"
 
               >
                 {{ menu.name }}
