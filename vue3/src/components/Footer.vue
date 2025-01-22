@@ -4,12 +4,12 @@ export default {
   data() {
     return {
       images: [
-        "../assets/Logo_Fake.png",
-        "https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp",
-        "https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp",
-        "https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp",
-        "https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp",
-        "https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp"
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ"
       ]
     };
   }
