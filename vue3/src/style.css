@@ -25,9 +25,10 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
+  max-width: 100%;
   min-height: 100vh;
+  overflow-x: hidden; /* 禁止橫向滾動 */
 }
 
 h1 {

@@ -22,8 +22,8 @@ setTimeout(() => {
 
 <template>
   <Navbar_and_Sidebar/>
-  <div class="container-fluid">
-    <router-view></router-view>
+  <div class="container-fluid justify-content-center">
+    <router-view class="router-view"></router-view>
   </div>
 
   <Footer/>
@@ -35,5 +35,6 @@ setTimeout(() => {
   width: 100vw;
   height: 100%;
 }
+
 
 </style>

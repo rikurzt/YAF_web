@@ -1,4 +1,21 @@
-<script setup lang="ts">
+<script  lang="ts">
+
+export default {
+  data() {
+    return {
+      images: [
+        "../assets/Logo_Fake.png",
+        "https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp",
+        "https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp",
+        "https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp",
+        "https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp",
+        "https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp"
+      ]
+    };
+  }
+};
+
+
 
 </script>
 
@@ -52,6 +69,28 @@
         </div>
       </section>
       <!-- Section: Social media -->
+
+
+      <!-- Section: 贊助商LOGO -->
+      <section class="container">
+        <div class="row justify-content-center mb-4">
+          <h1 class="text-center">特別感謝</h1>
+        </div>
+        <div class="row">
+          <div
+              class="col-lg-2 col-md-12 mb-4 mb-md-0"
+              v-for="(image, index) in images"
+              :key="index"
+          >
+            <div class="bg-image hover-overlay shadow-1-strong rounded">
+              <img :src="image" class="w-100"  alt="image"/>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- Section: 贊助商LOGO -->
+
 
       <!-- Section: under parts -->
       <section class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
