@@ -3,13 +3,13 @@ import ParallaxSection from '../components/ParallaxSection.vue';
 </script>
 
 <template>
-    <ParallaxSection image="https://gj-events.gjs.tw/images/index-gj32n.png?20241110" :layer="1">
+    <ParallaxSection image="../assets/HomePage_Main_art.png" :layer="1">
       <h1>第一層圖片</h1>
     </ParallaxSection>
-    <ParallaxSection image="https://gj-events.gjs.tw/images/index-gj32n.png?20241110" :layer="2">
+    <ParallaxSection image="../assets/HomePage_Main_art.png" :layer="2">
       <h1>第二層圖片</h1>
     </ParallaxSection>
-    <ParallaxSection image="https://gj-events.gjs.tw/images/index-gj32n.png?20241110" :layer="3">
+    <ParallaxSection image="../assets/HomePage_Main_art.png" :layer="3">
       <h1>第三層圖片</h1>
     </ParallaxSection>
 
