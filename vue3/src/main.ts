@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import * as bootstrap from 'bootstrap';
-window.bootstrap = bootstrap;
+import 'bootstrap';
+
 import router from "../src/router";
 import {LoadingPlugin} from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/css/index.css';

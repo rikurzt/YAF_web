@@ -1,23 +1,24 @@
 <script setup lang="ts">
+  import {ref } from 'vue'
 
-import {ref, inject } from 'vue'
+  import Navbar_and_Sidebar from "./components/Navbar_and_Sidebar.vue";
+  import Footer from "./components/Footer.vue";
+  import {useLoading} from "vue-loading-overlay";
 
-import Navbar_and_Sidebar from "./components/Navbar_and_Sidebar.vue";
-import Footer from "./components/Footer.vue";
 
+  const fullPage:any = ref(true)
+  const onCancel:any = ref(false)
+  const formContainer:any = ref(null)
+  const $loading =  useLoading({})
 
-const fullPage = ref(true)
-const onCancel = ref(false)
-const formContainer = ref(null)
-const $loading =  inject('$loading')
-let loader=$loading.show({
-  container: fullPage.value ? null : formContainer.value,
-  canCancel: true,
-  onCancel: onCancel.value
-});
-setTimeout(() => {
-  loader.hide();
-},3000)
+  const loader=$loading.show({
+    container: fullPage.value ? null : formContainer.value,
+    canCancel: true,
+    onCancel: onCancel.value
+  });
+  setTimeout(() => {
+    loader.hide();
+  },3000)
 </script>
 
 <template>

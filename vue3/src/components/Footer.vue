@@ -4,12 +4,12 @@ export default {
   data() {
     return {
       images: [
-        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
-        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
-        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
-        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
-        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ",
-        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png?token=GHSAT0AAAAAAC5CJK3NSPCCO2BFXQCA3UTEZ4RHTSQ"
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png",
+        "https://raw.githubusercontent.com/rikurzt/YAF_web/refs/heads/master/vue3/src/assets/Logo_Fake.png"
       ]
     };
   }

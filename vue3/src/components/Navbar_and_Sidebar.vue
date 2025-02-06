@@ -138,8 +138,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script  lang="ts">
+import {defineComponent} from "vue";
+
+export default  defineComponent({
   name: "NavbarSidebar",
   data() {
     return {
@@ -187,20 +189,21 @@ export default {
     };
   },
   methods: {
-    isActive(menu) {
+    isActive(menu:any) {
       // 檢查當前路由是否匹配主選項或其子選項
       if (menu.link && this.$route.path === menu.link) {
         return true;
       }
       if (menu.children) {
-        return menu.children.some((child) => this.$route.path === child.link);
+        return menu.children.some((child:any) => this.$route.path === child.link);
       }
       return false;
     },
     closeSidebar() {
+      const win:any = window
       const offcanvasElement = document.getElementById("sidebar");
-      if (window.bootstrap) {
-        const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+      if (win.bootstrap) {
+        const bsOffcanvas = win.bootstrap.Offcanvas.getInstance(offcanvasElement);
         if (bsOffcanvas) {
           bsOffcanvas.hide();
 
@@ -208,7 +211,7 @@ export default {
       }
     },
   },
-};
+})
 </script>
 
 <style>
