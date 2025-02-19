@@ -22,6 +22,7 @@
 </script>
 
 <template>
+
   <Navbar_and_Sidebar/>
   <div class="container-fluid justify-content-center">
     <router-view class="router-view"></router-view>
@@ -34,7 +35,7 @@
 
 .container-fluid{
   width: 100vw;
-  height: 100%;
+  height: max-content;
 }
 
 

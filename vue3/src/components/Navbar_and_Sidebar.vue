@@ -185,6 +185,11 @@ export default  defineComponent({
             { name: "交通方式", link: "/SiteInfo/traffic" },
           ],
         },
+        {
+          name: "關於我們",
+          link: "/aboutus",
+          children: [],
+        },
       ],
     };
   },

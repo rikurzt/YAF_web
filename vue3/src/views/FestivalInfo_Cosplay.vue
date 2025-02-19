@@ -1,10 +1,16 @@
 <script setup lang="ts">
-
+import ContentBlock from '../components/ContentBlock.vue';
 </script>
 
 <template>
 
-    這是活動情資訊的cos相關資訊
+  <ContentBlock
+      title="這是標題"
+      content="<p>這是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式</em>。</p>"
+      :isHtml="true"
+  />
+  <ContentBlock title="嵌入組件" :content="ContentBlock" :isComponent="true" />
+
 
 
 </template>
