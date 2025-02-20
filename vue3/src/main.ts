@@ -12,9 +12,8 @@ import "yakuhanjp/dist/css/yakuhanjp_s.css"
 
 createApp(App).use(router).use(LoadingPlugin, {
     canCancel: false,
-    color: '#c9c9c9',
+    color: '#2a2a2a',
     backgroundColor:'#242424',
     opacity:1,
     loader: 'dots',
-
 }).mount('#app')

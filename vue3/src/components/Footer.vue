@@ -20,11 +20,11 @@ export default {
 </script>
 
 <template>
-  <footer class="bg-body-tertiary text-center text-lg-start   " >
+  <footer class="bg-body-tertiary text-center text-lg-start  " >
     <!-- container -->
-    <div class="container p-4">
+    <div class="container">
       <!-- Section: Social media -->
-      <section class="mb-4">
+      <section class="m-4 mt-4">
         <div class="container">
           <div class="row justify-content-center">
             <!-- Facebook -->
@@ -72,7 +72,7 @@ export default {
 
 
       <!-- Section: 贊助商LOGO -->
-      <section class="container">
+      <section class="ftcon container mt-5 mb-5 pb-3">
         <div class="row justify-content-center mb-4">
           <h1 class="text-center">特別感謝</h1>
         </div>
@@ -93,14 +93,14 @@ export default {
 
 
       <!-- Section: under parts -->
-      <section class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <section class="sss d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
         <p class="col-md-4 mb-0 text-body-secondary">© 2025 雲緣起執行委員會</p>
 
         <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
           <img src="../assets/logo.jpg" width="100"> </img>
         </a>
 
-        <ul class="nav col-sm-4 justify-content-end">
+        <ul class="nav col-md-4 justify-content-end">
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact us</a></li>
@@ -124,5 +124,10 @@ footer{
   height: auto;
 }
 
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1920px;
+  }
+}
 
 </style>

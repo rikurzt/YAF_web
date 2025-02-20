@@ -1,9 +1,10 @@
 <script setup lang="ts">
 
+import ContentBlock from "../components/ContentBlock.vue";
 </script>
 
 <template>
-
+  <ContentBlock title="最新消息" :content="ContentBlock" :isComponent="true" />
 </template>
 
 <style scoped>

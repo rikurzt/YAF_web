@@ -13,8 +13,12 @@
 
   const loader=$loading.show({
     container: fullPage.value ? null : formContainer.value,
-    canCancel: true,
-    onCancel: onCancel.value
+    canCancel: false,
+    onCancel: onCancel.value,
+    color: '#000000',
+    backgroundColor:'#ffffff',
+    opacity:1,
+    loader: 'dots',
   });
   setTimeout(() => {
     loader.hide();
@@ -25,7 +29,7 @@
 
   <Navbar_and_Sidebar/>
   <div class="container-fluid justify-content-center">
-    <router-view class="router-view"></router-view>
+    <router-view class="router-view pb-3"></router-view>
   </div>
 
   <Footer/>
