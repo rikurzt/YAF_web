@@ -3,6 +3,7 @@
     <div class="w-75 mx-auto">
       <h1 class="fw-bold display-2 text-start mb-sm-5 mt-5 pb-5 pt-5">{{ title }}</h1>
       <div v-if="isHtml" v-html="content" class = "text-start fs-6 mx-auto ps-5"></div>
+      <div v-else-if="isMarkdown" v-html="parsedMarkdown" class="fs-6"></div>
       <div v-else-if="isComponent">
         <component :is="contentComponent"></component>
       </div>
@@ -12,6 +13,9 @@
 </template>
 
 <script lang="ts">
+import { ref, computed, onMounted } from "vue";
+import { marked } from "marked";
+
 export default {
   props: {
     title: {
@@ -29,13 +33,46 @@ export default {
     isComponent: {
       type: Boolean,
       default: false
+    },
+    isMarkdown: {
+      type: Boolean,
+      default: false
     }
   },
+  setup(props) {
+    const markdownContent = ref("");
+
+    // 當 content 是 Markdown 檔案時，讀取內容
+    onMounted(async () => {
+      if (props.isMarkdown && typeof props.content === "string") {
+        try {
+          const response = await fetch(props.content);
+          markdownContent.value = await response.text();
+        } catch (error) {
+          console.error("讀取 Markdown 失敗：", error);
+          markdownContent.value = "無法載入 Markdown 檔案。";
+        }
+      }
+    });
+
+    // 解析 Markdown
+    const parsedMarkdown = computed(() => {
+      return props.isMarkdown ? marked(markdownContent.value) : "";
+    });
+
+    // 確保 Vue 組件被正確解析
+    const contentComponent = computed(() => {
+      return props.isComponent && typeof props.content === "object" ? props.content : null;
+    });
+
+    return { parsedMarkdown, contentComponent };
+  },
   computed: {
-    contentComponent() {
+    contentComponent():any {
       return this.isComponent ? this.content : null;
     }
   },
+
 };
 </script>
 

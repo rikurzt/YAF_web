@@ -1,9 +1,11 @@
 <script setup lang="ts">
 
+import ContentBlock from "../components/ContentBlock.vue";
 </script>
 
 <template>
-  這是活動情資訊的規則
+  <ContentBlock title="Markdown 渲染" content="/example.md" :isMarkdown="true" />
+
 </template>
 
 <style scoped>
