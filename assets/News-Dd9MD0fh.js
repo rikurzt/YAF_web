@@ -1,1 +1,0 @@
-import{C as e}from"./ContentBlock-CK7yt1t1.js";import{d as t,c as o,o as n}from"./index-Crscm_g2.js";const m=t({__name:"News",setup(r){return(c,s)=>(n(),o(e,{title:"最新消息",content:e,isComponent:!0}))}});export{m as default};
