@@ -1,0 +1,1 @@
+import{C as t}from"./ContentBlock-CGxKwhVw.js";import{d as e,c as o,o as n}from"./index-DfY7SrMH.js";const _=e({__name:"FestivalInfo_Rule",setup(r){return(a,s)=>(n(),o(t,{title:"Markdown 渲染",content:"/markdown/test.md",isMarkdown:!0}))}});export{_ as default};
