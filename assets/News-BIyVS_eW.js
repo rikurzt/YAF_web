@@ -1,1 +1,0 @@
-import{C as e}from"./ContentBlock-DiCEAPwq.js";import{d as t,c as o,o as n}from"./index-CeBl-pvf.js";const m=t({__name:"News",setup(r){return(c,s)=>(n(),o(e,{title:"最新消息",content:e,isComponent:!0}))}});export{m as default};
