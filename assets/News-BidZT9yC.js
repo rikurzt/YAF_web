@@ -1,0 +1,1 @@
+import{C as e}from"./ContentBlock-CMad8cm4.js";import{d as t,c as o,o as n}from"./index-Cx2O1PUA.js";const m=t({__name:"News",setup(r){return(c,s)=>(n(),o(e,{title:"最新消息",content:e,isComponent:!0}))}});export{m as default};
