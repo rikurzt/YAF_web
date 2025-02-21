@@ -1,1 +1,0 @@
-import{C as t}from"./ContentBlock-D6Pu3edq.js";import{d as o,c as e,o as n}from"./index-DVkJ-LxU.js";const _=o({__name:"Show_List",setup(r){return(c,s)=>(n(),e(t,{title:"表演時間",content:t,isComponent:!0}))}});export{_ as default};
