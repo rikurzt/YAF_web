@@ -1,0 +1,1 @@
+import{C as t}from"./ContentBlock-BC5jet3r.js";import{d as e,c as o,o as n}from"./index-BluCABOC.js";const _=e({__name:"SiteInfo_Map",setup(r){return(a,c)=>(n(),o(t,{title:"場地圖",content:t,isComponent:!0}))}});export{_ as default};

@@ -1,0 +1,1 @@
+import{C as o}from"./ContentBlock-BC5jet3r.js";import{d as t,c as e,o as n}from"./index-BluCABOC.js";const _=t({__name:"Show_GroupInfo",setup(r){return(c,a)=>(n(),e(o,{title:"表演團體",content:o,isComponent:!0}))}});export{_ as default};
