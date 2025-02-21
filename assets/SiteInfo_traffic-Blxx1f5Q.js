@@ -1,0 +1,1 @@
+import{C as t}from"./ContentBlock-D6Pu3edq.js";import{d as e,c as o,o as n}from"./index-DVkJ-LxU.js";const _=e({__name:"SiteInfo_traffic",setup(r){return(c,a)=>(n(),o(t,{title:"交通方式",content:t,isComponent:!0}))}});export{_ as default};
