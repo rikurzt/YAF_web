@@ -18,7 +18,7 @@ const props = defineProps({
 
 // 使用 props 直接計算背景樣式
 const backgroundStyle = computed(() => ({
-  backgroundImage: `url(${props.image})`,
+  backgroundImage: `url(${import.meta.env.BASE_URL+props.image})`,
   backgroundAttachment: 'fixed',
   backgroundPosition: 'center',
   backgroundSize: 'cover',

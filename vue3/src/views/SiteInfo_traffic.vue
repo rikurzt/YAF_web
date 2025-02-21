@@ -1,9 +1,10 @@
 <script setup lang="ts">
 
+import ContentBlock from "../components/ContentBlock.vue";
 </script>
 
 <template>
-  這是場地資訊的交通方式
+  <ContentBlock title="交通方式" :content="ContentBlock" :isComponent="true" />
 </template>
 
 <style scoped>
