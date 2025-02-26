@@ -11,7 +11,8 @@ const routes = [
     {
         path: '/News',
         name: './News.vue',
-        component:import("../views/News.vue"),
+        component: ()=>
+            import("../views/News.vue"),
         props: true
     },
     {
