@@ -3,7 +3,11 @@
     <!-- Navbar for desktop -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-none d-lg-flex">
       <div class="container-fluid">
-        <router-link class="navbar-brand" to="/">雲緣起2025</router-link>
+        <router-link class="navbar-brand" to="/">
+          <svg width="96" height="48" >
+            <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="48"  />
+          </svg>
+        </router-link>
         <button
             class="navbar-toggler"
             type="button"
@@ -64,9 +68,10 @@
     </nav>
 
     <!-- Sidebar for mobile -->
-    <div class="d-lg-none fixed-top">
+    <div class="d-lg-none fixed-top bg-light ">
+
       <button
-          class="btn btn-primary m-2"
+          class="btn btn-primary m-4"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#sidebar"
@@ -76,7 +81,9 @@
       </button>
       <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title">雲緣起2025</h5>
+          <svg width="96" height="48" >
+            <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="48"  />
+          </svg>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">

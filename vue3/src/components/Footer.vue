@@ -88,17 +88,17 @@ export default {
         </div>
         <div class="row">
           <div
-              class="col-lg-2 col-md-12 mb-4 mb-md-0"
+              class="col-lg-2 col-md-3 col-sm-4 col-4 mb-4"
               v-for="(image, index) in images"
               :key="index"
           >
             <div class="bg-image hover-overlay shadow-1-strong rounded">
-              <img v-bind:src="image" class="w-100"  alt="image"/>
+              <img v-bind:src="image" class="img-fluid w-100" alt="image" />
             </div>
           </div>
         </div>
-
       </section>
+
       <!-- Section: 贊助商LOGO -->
 
 
@@ -106,8 +106,10 @@ export default {
       <section class="sss d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
         <p class="col-md-4 mb-0 text-body-secondary">© 2025 雲緣起執行委員會</p>
 
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          <img src="/img/logo.jpg" width="100"> </img>
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center link-body-emphasis text-decoration-none">
+          <svg width="96" height="96" >
+            <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="96"  />
+          </svg>
         </a>
 
         <ul class="nav col-md-4 justify-content-end">
