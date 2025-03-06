@@ -1,0 +1,1 @@
+import{C as t}from"./ContentBlock-DxZl4sN_.js";import{d as e,c as o,o as n}from"./index-CU9kKL-Y.js";const _=e({__name:"SiteInfo_Map",setup(r){return(a,c)=>(n(),o(t,{title:"場地圖",content:t,isComponent:!0}))}});export{_ as default};

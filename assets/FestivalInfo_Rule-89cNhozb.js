@@ -1,0 +1,1 @@
+import{C as t}from"./ContentBlock-DxZl4sN_.js";import{d as e,c as o,o as n}from"./index-CU9kKL-Y.js";const _=e({__name:"FestivalInfo_Rule",setup(r){return(a,s)=>(n(),o(t,{title:"活動規範",content:"/markdown/test.md",isMarkdown:!0}))}});export{_ as default};
