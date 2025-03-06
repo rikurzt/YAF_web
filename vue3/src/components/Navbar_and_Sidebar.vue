@@ -68,14 +68,14 @@
     </nav>
 
     <!-- Sidebar for mobile -->
-    <div class="d-lg-none fixed-top bg-light ">
-
+    <div class="d-lg-none fixed-top bg-light d-flex justify-content-end">
       <button
           class="btn btn-primary m-4"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#sidebar"
           aria-controls="sidebar"
+
       >
         ☰ Menu
       </button>

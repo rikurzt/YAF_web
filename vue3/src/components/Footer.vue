@@ -103,21 +103,30 @@ export default {
 
 
       <!-- Section: under parts -->
-      <section class="sss d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-        <p class="col-md-4 mb-0 text-body-secondary">© 2025 雲緣起執行委員會</p>
+      <section class="sss container">
+        <div class="row align-items-center py-3 border-top">
+          <div class="col-4 text-start">
+            <p class="mb-0 text-body-secondary">© 2025 雲緣起執行委員會</p>
+          </div>
 
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center link-body-emphasis text-decoration-none">
-          <svg width="96" height="96" >
-            <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="96"  />
-          </svg>
-        </a>
+          <div class="col-4 text-center">
+            <a href="/" class="d-inline-block link-body-emphasis text-decoration-none">
+              <svg width="96" height="96">
+                <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="96" />
+              </svg>
+            </a>
+          </div>
 
-        <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact us</a></li>
-        </ul>
+          <div class="col-4 text-end">
+            <ul class="nav col-md-4 justify-content-end">
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
       </section>
+
       <!-- Section: under parts -->
     </div>
   </footer>
