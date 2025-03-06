@@ -1,1 +1,0 @@
-import{C as o}from"./ContentBlock-DxZl4sN_.js";import{d as t,c as e,o as n}from"./index-CU9kKL-Y.js";const _=t({__name:"Show_GroupInfo",setup(r){return(c,a)=>(n(),e(o,{title:"表演團體",content:o,isComponent:!0}))}});export{_ as default};
