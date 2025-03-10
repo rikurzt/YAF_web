@@ -117,11 +117,11 @@ export default {
             </a>
           </div>
 
-          <div class="col-4 text-end">
-            <ul class="nav col-md-4 justify-content-end">
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact us</a></li>
+          <div class="col-4 text-end ">
+            <ul class="nav d-flex flex-wrap flex-sm-nowrap align-item-end justify-content-end ">
+              <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary text-nowrap">回到首頁</a></li>
+              <li class="nav-item"><router-link to="/PrivacyPolicy" class="nav-link px-2 text-body-secondary text-nowrap">隱私權政策</router-link></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary text-nowrap">聯絡我們</a></li>
             </ul>
           </div>
         </div>
