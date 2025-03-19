@@ -9,7 +9,7 @@ import ContentBlock from "../components/ContentBlock.vue";
 
   <!-- 使用 https://www.commoninja.com/facebook-feed/ 製作-->
 
-  <iframe src="https://widgets.commoninja.com/iframe/318e8df6-9fd6-455a-a382-cbad8d4ed74a"  frameborder="1" scrolling="no"></iframe>
+  <iframe src="https://widgets.commoninja.com/iframe/318e8df6-9fd6-455a-a382-cbad8d4ed74a"  frameborder="0" scrolling="no"></iframe>
   <div class="my-5 pb-lg-5 "></div>
 
 
