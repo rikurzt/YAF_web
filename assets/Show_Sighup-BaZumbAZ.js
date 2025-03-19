@@ -1,0 +1,1 @@
+import{C as e}from"./ContentBlock-CAYwXU0w.js";import{d as o,e as t,o as n}from"./index-CRJOQynE.js";const _=o({__name:"Show_Sighup",setup(r){return(a,c)=>(n(),t(e,{title:"報名表演",content:e,isComponent:!0}))}});export{_ as default};

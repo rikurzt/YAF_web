@@ -1,0 +1,1 @@
+import{C as o}from"./ContentBlock-CAYwXU0w.js";import{d as e,e as t,o as r}from"./index-CRJOQynE.js";const m=e({__name:"PrivacyPolicy",setup(n){return(a,c)=>(r(),t(o,{title:"隱私權政策",content:"/markdown/privacyPolicy.md",isMarkdown:!0}))}});export{m as default};
