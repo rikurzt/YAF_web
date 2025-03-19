@@ -1,0 +1,1 @@
+import{C as t}from"./ContentBlock-CEFVhKqi.js";import{d as e,e as o,o as n}from"./index-p0h3mTMp.js";const m=e({__name:"AboutUs",setup(r){return(s,a)=>(n(),o(t,{title:"關於雲緣起",content:t,isComponent:!0}))}});export{m as default};
