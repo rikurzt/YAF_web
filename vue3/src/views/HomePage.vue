@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import {onBeforeUnmount, onMounted} from 'vue';
+import ContentBlock from "../components/ContentBlock.vue";
 
 
 const handleScroll = () => {
@@ -27,19 +28,14 @@ onBeforeUnmount(() => {
     <img alt="" class="main-art img-fluid" src="/img/HomePage_Main_art.png"/>
     <img id="parallax-right" alt="Right Image" class="parallax-image right" src="/img/logo.jpg"/>
     <div class="cover-container d-flex fixed-height w-100 h-100 p-5 m-5 mx-auto flex-column">
-      <main class="px-3">
-        <h1>Cover your page.</h1>
-        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the
-          text, and add your own fullscreen background photo to make it your own.</p>
-        <p class="lead">
-          <a class="btn btn-lg btn-light fw-bold border-white bg-white" href="#">Learn more</a>
-        </p>
-      </main>
+      <ContentBlock title="最新消息" content=" " />
+      <iframe src="https://widgets.commoninja.com/iframe/318e8df6-9fd6-455a-a382-cbad8d4ed74a"  frameborder="0" scrolling="yes"></iframe>
     </div>
   </div>
 </template>
 
 <style scoped>
+
 
 @media (max-width: 1050px) {
   .parallax-image {
@@ -74,6 +70,11 @@ onBeforeUnmount(() => {
   }
 }
 
+iframe {
+  width: 85%; /* 預設寬度為 100% */
+  height: 500px;
+
+}
 .parallax-container {
   position: relative;
 
@@ -81,7 +82,7 @@ onBeforeUnmount(() => {
 
 .parallax-image {
   position: absolute;
-  top: 60%;
+  top: 45vw;
   width: 300px;
   height: auto;
 

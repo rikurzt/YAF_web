@@ -20,7 +20,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "[Components]"
+      default: "[維護中]"
     },
     content: {
       type: [String, Object],
