@@ -28,8 +28,8 @@
 <template>
 
   <Navbar_and_Sidebar/>
-  <div class="container-fluid justify-content-center">
-    <router-view class="router-view pb-3"></router-view>
+  <div class="container-fluid justify-content-center p-0">
+    <router-view class="router-view "></router-view>
   </div>
 
   <Footer/>

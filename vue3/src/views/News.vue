@@ -28,6 +28,9 @@ iframe {
     width: 1920px;
 
   }
+  img{
+    width: 50%
+  }
 }
 
 @media only screen and (max-width: 400px) {

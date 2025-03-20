@@ -119,9 +119,9 @@ export default {
 
           <div class="col-4 text-end ">
             <ul class="nav d-flex flex-wrap flex-sm-nowrap align-item-end justify-content-end ">
-              <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary text-nowrap">回到首頁</a></li>
+              <li class="nav-item"><router-link to="/#" class="nav-link px-2 text-body-secondary text-nowrap">回到首頁</router-link></li>
               <li class="nav-item"><router-link to="/PrivacyPolicy" class="nav-link px-2 text-body-secondary text-nowrap">隱私權政策</router-link></li>
-              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary text-nowrap">聯絡我們</a></li>
+              <li class="nav-item"><router-link to="#" class="nav-link px-2 text-body-secondary text-nowrap">聯絡我們</router-link></li>
             </ul>
           </div>
         </div>
