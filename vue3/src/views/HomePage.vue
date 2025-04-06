@@ -38,6 +38,14 @@ onBeforeUnmount(() => {
 
 
 @media (max-width: 1050px) {
+
+  .main-art {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
   .parallax-image {
     width: 150px;
     height: auto;
@@ -47,6 +55,14 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 768px) {
+
+  .main-art {
+    aspect-ratio: 9 / 16;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+  }
   .parallax-image {
     width: 150px;
     height: auto;
@@ -59,6 +75,13 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 480px) {
+  .main-art {
+    aspect-ratio: 9 / 21;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+  }
   .parallax-image {
     width: 100px;
     height: auto;
@@ -68,6 +91,15 @@ onBeforeUnmount(() => {
   .left, .right {
     top: 10%;
   }
+}
+
+.main-art {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 iframe {
