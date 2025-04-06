@@ -1,1 +1,0 @@
-import{d as e,e as o,o as t,C as n}from"./index-C_KenfYC.js";const i=e({__name:"PrivacyPolicy",setup(a){return(c,r)=>(t(),o(n,{title:"隱私權政策",content:"/markdown/privacyPolicy.md",isMarkdown:!0}))}});export{i as default};
