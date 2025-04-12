@@ -28,13 +28,32 @@ const props = defineProps<{
 const styleObject = ref({ transform: '' })
 const base_URL = import.meta.env.BASE_URL
 
-const getResponsiveValue = <T>(map?: ResponsiveValue<T>): T | undefined => {
-  const width = window.innerWidth
-  if (typeof map !== 'object') return map
-  if (width <= 480) return map.mobile
-  if (width <= 768) return map.tablet
-  return map.desktop
+type ResponsiveObject<T> = {
+  desktop?: T
+  tablet?: T
+  mobile?: T
 }
+
+function isResponsiveObject<T>(val: any): val is ResponsiveObject<T> {
+  return (
+      val &&
+      typeof val === 'object' &&
+      ('desktop' in val || 'tablet' in val || 'mobile' in val)
+  )
+}
+
+
+
+
+const getResponsiveValue = <T>(val?: ResponsiveValue<T>): T | undefined => {
+  const width = window.innerWidth
+  if (!val || !isResponsiveObject<T>(val)) return val
+  if (width <= 480) return val.mobile
+  if (width <= 768) return val.tablet
+  return val.desktop
+}
+
+
 
 // 狀態
 const responsiveValues = ref({

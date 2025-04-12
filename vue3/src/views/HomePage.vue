@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {onBeforeUnmount, onMounted} from 'vue';
+
 import ContentBlock from "../components/ContentBlock.vue";
 import ParallaxImage from '../components/ParallaxImage.vue'
 </script>
@@ -7,7 +7,17 @@ import ParallaxImage from '../components/ParallaxImage.vue'
 <template>
   <div class="parallax-container" style="position: relative;">
     <!-- Parallax Images -->
-    <div class="parallax-wrapper" :style="wrapperStyle">
+    <div class="parallax-wrapper" >
+      <ParallaxImage
+          src="/img/HomePage_Main_art_rock.png"
+          direction="right"
+          alt="132"
+          :offsetMultiplier="{ desktop: 0, tablet: 0, mobile: 0 }"
+          :top="{ desktop: '2.9vw', tablet: '50%', mobile: '37vw' }"
+          :left="{ desktop: '35.6vw', mobile: '9vw' }"
+          :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
+          :width="{ desktop: '32.5%', tablet: '150px', mobile: '102%' }"
+      />
       <ParallaxImage
           src="/img/HomePage_Main_art_Bush_L.png"
           direction="left"
@@ -28,16 +38,6 @@ import ParallaxImage from '../components/ParallaxImage.vue'
           :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
           :width="{ desktop: '50%', tablet: '150px', mobile: '70%' }"
     />
-      <ParallaxImage
-          src="/img/HomePage_Main_art_rock.png"
-          direction="right"
-          alt="132"
-          :offsetMultiplier="{ desktop: 0, tablet: 0, mobile: 0 }"
-          :top="{ desktop: '2.9vw', tablet: '50%', mobile: '37vw' }"
-          :left="{ desktop: '35.6vw', mobile: '9vw' }"
-          :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
-          :width="{ desktop: '32.5%', tablet: '150px', mobile: '102%' }"
-      />
     </div>
     <!-- 主圖 -->
     <img alt="" class="main-art img-fluid" src="/img/HomePage_Main_art.png"/>
