@@ -16,7 +16,7 @@ type ResponsiveValue<T> = T | { desktop?: T; tablet?: T; mobile?: T }
 const props = defineProps<{
   src: string
   alt?: string
-  direction: 'left' | 'right'
+  direction?: 'left' | 'right' | 'up' | 'down'
   offsetMultiplier?: ResponsiveValue<number>
   top?: ResponsiveValue<string>
   width?: ResponsiveValue<string>
@@ -64,13 +64,26 @@ const responsiveValues = ref({
   right: getResponsiveValue(props.right),
   offset: getResponsiveValue(props.offsetMultiplier) ?? 0.5
 })
-
+const direction = props.direction ?? 'left'
+let ticking = false
 const scrollHandler = () => {
-  const offsetValue = window.scrollY * (responsiveValues.value.offset ?? 0.5)
-  styleObject.value.transform =
-      props.direction === 'left'
-          ? `translateX(calc(-${offsetValue}px + 50px))`
-          : `translateX(calc(${offsetValue}px - 50px))`
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const offset = window.scrollY * (responsiveValues.value.offset ?? 0.5)
+
+      let xOffset = 0
+      let yOffset = 0
+
+      if (direction === 'left') xOffset = -offset
+      else if (direction === 'right') xOffset = offset
+      else if (direction === 'up') yOffset = -offset
+      else if (direction === 'down') yOffset = offset
+
+      styleObject.value.transform = `translate3d(${xOffset}px, ${yOffset}px, 0)`
+      ticking = false
+    })
+    ticking = true
+  }
 }
 
 const resizeHandler = () => {

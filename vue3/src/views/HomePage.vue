@@ -9,12 +9,22 @@ import ParallaxImage from '../components/ParallaxImage.vue'
     <!-- Parallax Images -->
     <div class="parallax-wrapper" >
       <ParallaxImage
+          src="/img/HomePage_Main_art_Fog.png"
+          direction="right"
+          alt="132"
+          :offsetMultiplier="{ desktop: 0.3, tablet: 0.3, mobile: 0.3 }"
+          :top="{ desktop: '2.9vw', tablet: '50%', mobile: '37vw' }"
+          :left="{ desktop: '0vw', mobile: '9vw' }"
+          :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
+          :width="{ desktop: '100%', tablet: '150px', mobile: '102%' }"
+      />
+      <ParallaxImage
           src="/img/HomePage_Main_art_rock.png"
           direction="right"
           alt="132"
           :offsetMultiplier="{ desktop: 0, tablet: 0, mobile: 0 }"
-          :top="{ desktop: '2.9vw', tablet: '50%', mobile: '37vw' }"
-          :left="{ desktop: '35.6vw', mobile: '9vw' }"
+          :top="{ desktop: '2.9vw', tablet: '50%', mobile: '37.3vw' }"
+          :left="{ desktop: '33vw', mobile: '9vw' }"
           :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
           :width="{ desktop: '32.5%', tablet: '150px', mobile: '102%' }"
       />
@@ -22,7 +32,7 @@ import ParallaxImage from '../components/ParallaxImage.vue'
           src="/img/HomePage_Main_art_Bush_L.png"
           direction="left"
           alt="132"
-          :offsetMultiplier="{ desktop: 0.5, tablet: 0.35, mobile: 0.4 }"
+          :offsetMultiplier="{ desktop: 0.6, tablet: 0.55, mobile: 0.5 }"
           :top="{ desktop: '35vw', tablet: '50%', mobile: '180vw' }"
           :left="{ desktop: '-5vw', mobile: '-20vw' }"
           :right="{ desktop: '0', tablet: '0' }"
@@ -32,7 +42,7 @@ import ParallaxImage from '../components/ParallaxImage.vue'
           src="/img/HomePage_Main_art_Bush_R.png"
           direction="right"
           alt="132"
-          :offsetMultiplier="{ desktop: 0.5, tablet: 0.35, mobile: 0.4 }"
+          :offsetMultiplier="{ desktop: 0.6, tablet: 0.55, mobile: 0.5 }"
           :top="{ desktop: '35vw', tablet: '50%', mobile: '180vw' }"
           :left="{ desktop: '65vw', mobile: '45vw' }"
           :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
