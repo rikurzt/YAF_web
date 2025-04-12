@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import {ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
   import Navbar_and_Sidebar from "./components/Navbar_and_Sidebar.vue";
   import Footer from "./components/Footer.vue";
@@ -20,9 +20,16 @@
     opacity:1,
     loader: 'dots',
   });
-  setTimeout(() => {
-    loader.hide();
-  },3000)
+
+onMounted(() => {
+  window.onload = () => {
+    // 設定一個延遲時間，確保動畫至少顯示 3 秒
+    setTimeout(() => {
+      loader.hide()
+      console.log("所有圖片與資源都已載入完成，loading 關閉")
+    }, 0)  // 保證最少顯示 3 秒
+  }
+})
 </script>
 
 <template>

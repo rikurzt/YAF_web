@@ -1,0 +1,93 @@
+<template>
+  <img
+      :src="base_URL+src"
+      :alt="alt"
+      class="parallax-image"
+      :data-direction="direction"
+      :style="combinedStyle"
+  />
+</template>
+
+<script setup lang="ts">
+import { onMounted, onBeforeUnmount, ref, computed } from 'vue'
+
+type ResponsiveValue<T> = T | { desktop?: T; tablet?: T; mobile?: T }
+
+const props = defineProps<{
+  src: string
+  alt?: string
+  direction: 'left' | 'right'
+  offsetMultiplier?: ResponsiveValue<number>
+  top?: ResponsiveValue<string>
+  width?: ResponsiveValue<string>
+  height?: ResponsiveValue<string>
+  left?: ResponsiveValue<string>
+  right?: ResponsiveValue<string>
+}>()
+
+const styleObject = ref({ transform: '' })
+const base_URL = import.meta.env.BASE_URL
+
+const getResponsiveValue = <T>(map?: ResponsiveValue<T>): T | undefined => {
+  const width = window.innerWidth
+  if (typeof map !== 'object') return map
+  if (width <= 480) return map.mobile
+  if (width <= 768) return map.tablet
+  return map.desktop
+}
+
+// 狀態
+const responsiveValues = ref({
+  top: getResponsiveValue(props.top) ?? '35vw',
+  width: getResponsiveValue(props.width) ?? '55%',
+  height: getResponsiveValue(props.height) ?? 'auto',
+  left: getResponsiveValue(props.left),
+  right: getResponsiveValue(props.right),
+  offset: getResponsiveValue(props.offsetMultiplier) ?? 0.5
+})
+
+const scrollHandler = () => {
+  const offsetValue = window.scrollY * (responsiveValues.value.offset ?? 0.5)
+  styleObject.value.transform =
+      props.direction === 'left'
+          ? `translateX(calc(-${offsetValue}px + 50px))`
+          : `translateX(calc(${offsetValue}px - 50px))`
+}
+
+const resizeHandler = () => {
+  responsiveValues.value.top = getResponsiveValue(props.top) ?? '35vw'
+  responsiveValues.value.width = getResponsiveValue(props.width) ?? '55%'
+  responsiveValues.value.height = getResponsiveValue(props.height) ?? 'auto'
+  responsiveValues.value.left = getResponsiveValue(props.left) ?? '0'
+  responsiveValues.value.right = getResponsiveValue(props.right) ?? '0'
+  responsiveValues.value.offset = getResponsiveValue(props.offsetMultiplier) ?? 0.5
+}
+
+const combinedStyle = computed(() => ({
+  ...styleObject.value,
+  top: responsiveValues.value.top,
+  width: responsiveValues.value.width,
+  height: responsiveValues.value.height,
+  left: responsiveValues.value.left,
+  right: responsiveValues.value.right
+}))
+
+onMounted(() => {
+  window.addEventListener('scroll', scrollHandler)
+  window.addEventListener('resize', resizeHandler)
+  scrollHandler()
+  resizeHandler()
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', scrollHandler)
+  window.removeEventListener('resize', resizeHandler)
+})
+</script>
+
+<style scoped>
+.parallax-image {
+  position: absolute;
+  transition:  transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+</style>
