@@ -9,6 +9,26 @@ import ParallaxImage from '../components/ParallaxImage.vue'
     <!-- Parallax Images -->
     <div class="parallax-wrapper" >
       <ParallaxImage
+          src="/img/HomePage_Main_art_rock_back.png"
+          direction="up"
+          alt="132"
+          :offsetMultiplier="{ desktop: 0.35, tablet: 0.35, mobile: 0.35 }"
+          :top="{ desktop: '6vw', tablet: '50%', mobile: '37vw' }"
+          :left="{ desktop: '0.75vw', mobile: '9vw' }"
+          :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
+          :width="{ desktop: '100%', tablet: '150px', mobile: '102%' }"
+      />
+      <ParallaxImage
+          src="/img/HomePage_Main_art_rock_back_2.png"
+          direction="down"
+          alt="132"
+          :offsetMultiplier="{ desktop: 0.2, tablet: 0.2, mobile: 0.2 }"
+          :top="{ desktop: '6vw', tablet: '50%', mobile: '37vw' }"
+          :left="{ desktop: '0.75vw', mobile: '9vw' }"
+          :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
+          :width="{ desktop: '100%', tablet: '150px', mobile: '102%' }"
+      />
+      <ParallaxImage
           src="/img/HomePage_Main_art_Fog.png"
           direction="right"
           alt="132"
@@ -19,12 +39,22 @@ import ParallaxImage from '../components/ParallaxImage.vue'
           :width="{ desktop: '100%', tablet: '150px', mobile: '102%' }"
       />
       <ParallaxImage
-          src="/img/HomePage_Main_art_rock.png"
+          src="/svg/YF05_雲緣起LOGO-01.svg"
           direction="right"
           alt="132"
-          :offsetMultiplier="{ desktop: 0, tablet: 0, mobile: 0 }"
-          :top="{ desktop: '2.9vw', tablet: '50%', mobile: '37.3vw' }"
-          :left="{ desktop: '33vw', mobile: '9vw' }"
+          :offsetMultiplier="{ desktop: 0.6, tablet: 0.6, mobile: 0.6 }"
+          :top="{ desktop: '15vw', tablet: '50%', mobile: '37.3vw' }"
+          :left="{ desktop: '60vw', mobile: '9vw' }"
+          :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
+          :width="{ desktop: '32.5%', tablet: '150px', mobile: '102%' }"
+      />
+      <ParallaxImage
+          src="/img/HomePage_Main_art_rock.png"
+          direction="down"
+          alt="132"
+          :offsetMultiplier="{ desktop: 0.2, tablet: 0.2, mobile: 0.2 }"
+          :top="{ desktop: '4vw', tablet: '50%', mobile: '37.3vw' }"
+          :left="{ desktop: '30vw', mobile: '9vw' }"
           :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
           :width="{ desktop: '32.5%', tablet: '150px', mobile: '102%' }"
       />
@@ -50,7 +80,7 @@ import ParallaxImage from '../components/ParallaxImage.vue'
     />
     </div>
     <!-- 主圖 -->
-    <img alt="" class="main-art img-fluid" src="/img/HomePage_Main_art.png"/>
+    <img alt="" class="main-art img-fluid" src="/img/HomePage_Main_art_bg.png"/>
 
     <div class="cover-container d-flex fixed-height w-100 h-100 p-5 m-5 mx-auto flex-column">
       <ContentBlock title="最新消息" content=" " />
@@ -102,7 +132,7 @@ import ParallaxImage from '../components/ParallaxImage.vue'
 .main-art {
   width: 100%;
   height: auto;
-  max-height: 100vh;
+  max-height: 150vh;
   object-fit: cover;
   object-position: center;
   display: block;
