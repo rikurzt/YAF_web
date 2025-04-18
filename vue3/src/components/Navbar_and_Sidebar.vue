@@ -162,7 +162,7 @@ export default  defineComponent({
           name: "活動情報",
           link: "#",
           children: [
-            { name: "Cosplay", link: "/FestivalInfo/Cosplay" },
+            { name: "Cosplay規則", link: "/FestivalInfo/Cosplay" },
             { name: "活動規範", link: "/FestivalInfo/Rule" },
           ],
         },
@@ -179,9 +179,9 @@ export default  defineComponent({
           name: "舞台展演",
           link: "#",
           children: [
-            { name: "報名表演", link: "/Show/Sighup" },
+            { name: "表演報名", link: "/Show/Sighup" },
             { name: "舞台時間表", link: "/Show/List" },
-            { name: "表演團體資訊", link: "/Show/GroupInfo" },
+            { name: "表演資訊公告", link: "/Show/GroupInfo" },
           ],
         },
         {
