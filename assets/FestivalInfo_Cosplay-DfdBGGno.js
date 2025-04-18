@@ -1,1 +1,0 @@
-import{d as o,e,o as t,C as a}from"./index-D9GlrNGJ.js";const p=o({__name:"FestivalInfo_Cosplay",setup(n){return(s,r)=>(t(),e(a,{title:"Cosplay規範",content:"/markdown/Cosplay規範.md",isMarkdown:!0}))}});export{p as default};
