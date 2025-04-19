@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import HomePage from "../views/HomePage.vue";
+import Cosplay from "../views/FestivalInfo_Cosplay.vue";
 const routes = [
     {
         path: '/',
@@ -25,8 +26,7 @@ const routes = [
     {
         path: '/FestivalInfo/Cosplay',
         name: './FestivalInfo_Cosplay.vue',
-        component: ()=>
-            import("../views/FestivalInfo_Cosplay.vue"),
+        component: Cosplay,
         props: true
     },
     {
@@ -102,7 +102,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHistory('/YAF_web/'),
     routes,
     scrollBehavior(_to, _from, savedPosition) {
         if (savedPosition) {

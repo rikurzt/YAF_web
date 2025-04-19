@@ -5,7 +5,7 @@
       <div v-if="isHtml" v-html="content" class = "text-start ps-lg-5 mx-auto fs-6 "></div>
       <div v-else-if="isMarkdown" v-html="parsedMarkdown" class="text-start ps-lg-5 mx-auto fs-6"></div>
       <div v-else-if="isComponent">
-        <component :is="contentComponent"></component>
+        <component :is="contentComponent" v-bind="componentProps"></component>
       </div>
       <p v-else class = "ext-start ps-lg-5 mx-auto fs-6">{{ content }}</p>
     </div>
@@ -37,6 +37,10 @@ export default {
     isMarkdown: {
       type: Boolean,
       default: false
+    },
+    componentProps: {
+      type: Object,
+      default: () => ({})
     }
   },
   setup(props) {
@@ -77,5 +81,5 @@ export default {
 </script>
 
 <style scoped>
-/* 這裡可以添加額外的自訂 CSS */
+
 </style>

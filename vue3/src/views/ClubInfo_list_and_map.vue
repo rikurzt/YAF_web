@@ -1,14 +1,125 @@
 <script setup lang="ts">
 
 import ContentBlock from "../components/ContentBlock.vue";
+import Gallary from '../components/Gallary.vue'
+
+
+
+const cardData:any = [
+  {
+    title: 'Card 1',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 2',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 3',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 1',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 2',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 3',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 1',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 2',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 3',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 1',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 2',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+  {
+    title: 'Card 3',
+    src: '/img/logo.jpg',
+    name:'攤位名稱',
+    description: '這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述這是攤位描述',
+    tag: '#tag1',
+    number: 'A1',
+
+  },
+]
 </script>
 
 <template>
-  <ContentBlock
-      title="社團名單與攤位圖"
-      content="<p>這是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式是 <strong>HTML</strong> 內容，可以包含 <em>樣式</em>。</p>"
-      :isHtml="true"
-  />
+  <ContentBlock title="參展社團" :content="Gallary" :isComponent="true" :component-props="{cards: cardData}"/>
+
 </template>
 
 <style scoped>

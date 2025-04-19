@@ -41,6 +41,18 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+h2{
+  padding: 40px;
+}
+h3{
+  padding: 20px;
+}
+p{
+  padding-left: 20px;
+}
+ul,ol{
+  margin-left: 2vw;
+}
 
 button {
   border-radius: 8px;

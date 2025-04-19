@@ -28,7 +28,13 @@ iframe {
 
 @media only screen and (max-width: 400px) {
   iframe {
-    width: 400px;
+    width: 360px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  iframe {
+    width: 280px;
   }
 }
 
