@@ -1,0 +1,1 @@
+import{d as t,c as a,a as n,b as o,F as r,o as s,C as l}from"./index-CgvxKNQU.js";const i=t({__name:"SiteInfo_traffic",setup(c){return(m,e)=>(s(),a(r,null,[n(l,{title:"交通方式",content:"/markdown/交通方式.md",isMarkdown:!0}),e[0]||(e[0]=o("div",{class:"my-5 pb-lg-5"},null,-1))],64))}});export{i as default};
