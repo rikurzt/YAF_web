@@ -6,10 +6,10 @@ import ContentBlock from "../components/ContentBlock.vue";
 <template>
   <ContentBlock title="最新消息" content=" " />
   <div class="my-5 pb-lg-5 "></div>
-
   <!-- 使用 https://www.commoninja.com/facebook-feed/ 製作-->
-
-  <iframe src="https://widgets.commoninja.com/iframe/318e8df6-9fd6-455a-a382-cbad8d4ed74a"  frameborder="0" scrolling="no"></iframe>
+  <div class="container">
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FYunlinAnimeFestival%3Flocale%3Dzh_TW&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+  </div>
   <div class="my-5 pb-lg-5 "></div>
 
 
@@ -18,24 +18,28 @@ import ContentBlock from "../components/ContentBlock.vue";
 <style scoped>
 
 iframe {
-  width: 100%; /* 預設寬度為 100% */
-  height: 7500px;
-
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1;
 }
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1080px) {
   iframe {
-    width: 1920px;
-
+    scale: 1.35;
+    padding-left: 20vw;
   }
   img{
     width: 50%
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 486px) {
   iframe {
-    width: 400px;
+    width: 100%;
+    scale: 1;
+    padding-left: 5vw;
   }
 }
 

@@ -84,7 +84,7 @@ import ParallaxImage from '../components/ParallaxImage.vue'
 
     <div class="cover-container d-flex fixed-height w-100 h-100 p-5 m-5 mx-auto flex-column">
       <ContentBlock title="最新消息" content=" " />
-      <iframe src="https://widgets.commoninja.com/iframe/318e8df6-9fd6-455a-a382-cbad8d4ed74a"  frameborder="0" scrolling="yes"></iframe>
+      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FYunlinAnimeFestival%3Flocale%3Dzh_TW&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="350" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
     </div>
   </div>
 
@@ -94,8 +94,8 @@ import ParallaxImage from '../components/ParallaxImage.vue'
 <style scoped>
 
 
-@media (max-width: 1050px) {
 
+@media (max-width: 1050px) {
   .main-art {
     aspect-ratio: 16 / 9;
     height: auto;
@@ -103,6 +103,7 @@ import ParallaxImage from '../components/ParallaxImage.vue'
     object-fit: cover;
     object-position: center;
   }
+
 
 }
 
@@ -116,6 +117,7 @@ import ParallaxImage from '../components/ParallaxImage.vue'
     object-position: center;
   }
 
+
 }
 
 @media (max-width: 480px) {
@@ -126,7 +128,6 @@ import ParallaxImage from '../components/ParallaxImage.vue'
     object-fit: cover;
     object-position: center;
   }
-
 }
 
 .main-art {
@@ -139,9 +140,27 @@ import ParallaxImage from '../components/ParallaxImage.vue'
 }
 
 iframe {
-  width: 85%; /* 預設寬度為 100% */
-  height: 500px;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1;
+}
 
+@media only screen and (min-width: 1080px) {
+  iframe {
+    scale: 1.3;
+    padding-left: 33vw;
+  }
+
+}
+
+@media only screen and (max-width: 486px) {
+  iframe {
+    width: 107%;
+    scale: 0.9;
+    padding-left: 0vw;
+  }
 }
 .parallax-container {
   position: relative;
