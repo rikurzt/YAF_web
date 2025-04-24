@@ -3,18 +3,24 @@
     <div class="w-75 mx-auto">
       <h1 class="fw-bold display-2 text-start mb-sm-5 mt-5 pb-5 pt-5">{{ title }}</h1>
 
-      <div v-if="isHtml" v-html="content" class="text-start ps-lg-5 mx-auto fs-6"></div>
-      <div v-else-if="isMarkdown" v-html="parsedMarkdown" class="text-start ps-lg-5 mx-auto fs-6"></div>
-      <div v-else-if="isComponent">
-        <component :is="contentComponent" v-bind="componentProps"></component>
+      <div v-if="disable" class="text-center">
+        <img src="/img/not_open.png" alt="Not Available" class="img-fluid" style="height: 50vh;" />
       </div>
-      <p v-else-if="content" class="text-start ps-lg-5 mx-auto fs-6">{{ content }}</p>
-      <div v-else class="text-center">
-        <img src="/img/not_open.png" alt="Not Available" class="img-fluid rounded" style="height: 60vh;" />
+      <div v-else>
+        <div v-if="isHtml" v-html="content" class="text-start ps-lg-5 mx-auto fs-6"></div>
+        <div v-else-if="isMarkdown" v-html="parsedMarkdown" class="text-start ps-lg-5 mx-auto fs-6"></div>
+        <div v-else-if="isComponent">
+          <component :is="contentComponent" v-bind="componentProps"></component>
+        </div>
+        <p v-else-if="content" class="text-start ps-lg-5 mx-auto fs-6">{{ content }}</p>
+        <div v-else class="text-center">
+          <img src="/img/not_open.png" alt="Not Available" class="img-fluid" style="height: 50vh; " />
+        </div>
       </div>
     </div>
   </div>
 </template>
+
 
 
 <script lang="ts">
@@ -46,6 +52,10 @@ export default {
     componentProps: {
       type: Object,
       default: () => ({})
+    },
+    disable: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props) {
