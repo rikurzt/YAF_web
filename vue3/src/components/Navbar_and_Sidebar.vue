@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Navbar for desktop -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-none d-lg-flex">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top d-none d-lg-flex nav-bg">
       <div class="container-fluid">
         <router-link class="navbar-brand" to="/">
           <svg width="96" height="48" >
@@ -68,7 +68,7 @@
     </nav>
 
     <!-- Sidebar for mobile -->
-    <div class="d-lg-none fixed-top bg-light d-flex justify-content-end">
+    <div class="d-lg-none fixed-top  d-flex justify-content-end nav-bg ">
       <button
           class="btn btn-primary m-4"
           type="button"
@@ -79,7 +79,7 @@
       >
         ☰ Menu
       </button>
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+      <div class="offcanvas offcanvas-start nav-bg" tabindex="-1" id="sidebar">
         <div class="offcanvas-header">
           <svg width="96" height="48" >
             <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="48"  />
@@ -232,6 +232,9 @@ export default  defineComponent({
 body {
   padding-top: 56px; /* Adjust for fixed navbar height */
 }
+.nav-bg{
+  background-color: #648e81;
+}
 .nav-item{
   margin-right: 16px;
   margin-left: 16px;
@@ -264,6 +267,9 @@ body {
   font-weight: bold;
   color: #007bff !important; /* 醒目的藍色 */
   text-decoration: underline;
+}
+.nav-link{
+  color: #ffffff
 }
 .nav-link:hover {
   color: #0056b3 !important;

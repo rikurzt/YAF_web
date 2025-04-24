@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <footer class="bg-body-tertiary text-center text-lg-start  " >
+  <footer class=" text-center text-lg-start  " >
     <!-- container -->
     <div class="container">
       <!-- Section: Social media -->
@@ -142,6 +142,7 @@ footer{
   position: relative;
   width: 100vw;
   height: auto;
+  background-color: #c7dad4;;
 }
 
 @media (min-width: 1400px) {
