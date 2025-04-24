@@ -5,7 +5,7 @@ import ContentBlock from "../components/ContentBlock.vue";
 
 <template>
   <ContentBlock title="表演報名" content="/markdown/表演報名.md" :isMarkdown="true" />
-  <ContentBlock title="隨機宅舞推薦" content=""  />
+  <ContentBlock title="隨機宅舞推薦" content=" "  />
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScT-nQ0Jus0W_HfFRQGlYb-ir6ut5cRBBCP8Y2E8mDd_zlaFg/viewform?embedded=true" width="640" height="766" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
   <div class="my-5 pb-lg-5 "></div>
 </template>
