@@ -68,18 +68,20 @@
     </nav>
 
     <!-- Sidebar for mobile -->
-    <div class="d-lg-none fixed-top  d-flex justify-content-end nav-bg ">
+    <nav class="navbar  fixed-top justify-content-end d-lg-none d-md-flex nav-bg ">
       <button
-          class="btn btn-primary m-4"
+          class="btn btn-primary my-3 mx-5"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#sidebar"
           aria-controls="sidebar"
-
       >
         ☰ Menu
       </button>
-      <div class="offcanvas offcanvas-start nav-bg" tabindex="-1" id="sidebar">
+    </nav>
+
+    <div class="d-lg-none fixed-top  d-flex side-bg ">
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
         <div class="offcanvas-header">
           <svg width="96" height="48" >
             <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="48"  />
@@ -233,7 +235,14 @@ body {
   padding-top: 56px; /* Adjust for fixed navbar height */
 }
 .nav-bg{
-  background-color: #648e81;
+  background-color: rgba(100, 142, 129, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0 3px 7px 0;
+
+}
+.side-bg{
+
 }
 .nav-item{
   margin-right: 16px;
@@ -260,21 +269,29 @@ body {
 .active-link {
   font-weight: bold;
   color: #007bff !important; /* 使顏色更醒目 */
-  text-decoration: underline;
 }
 
 .active-link > .nav-link {
   font-weight: bold;
-  color: #007bff !important; /* 醒目的藍色 */
-  text-decoration: underline;
+  color: #ffffff !important;
+  transition: 0.7s;
+  text-shadow: 0 0 10px rgba(0, 255, 235, 0.75),0 0 20px rgba(0, 255, 235, 0.75),0 0 30px rgba(0, 255, 235, 0.75),0 0 40px rgba(0, 255, 235, 0.75);
+
+}
+.active-link > .nav-link:hover {
+  font-weight: bold;
+  color: #ffffff !important;
+  transition: 0.5s;
+  text-shadow: 0 0 10px rgba(0, 255, 235, 0.75),0 0 20px rgba(0, 255, 235, 0.75),0 0 30px rgba(0, 255, 235, 0.75),0 0 40px rgba(0, 255, 235, 0.75),#ffffff 20px 5px 3px;
 }
 .nav-link{
-  color: #ffffff
-}
-.nav-link:hover {
-  color: #0056b3 !important;
-  text-decoration: underline;
-  font-weight: bold;
+  --bs-nav-link-color: rgba(255, 255, 255, 0.8);
 }
 
+.nav-link:hover {
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold;
+  transition: 0.5s;
+  text-shadow: #ffffff 20px 5px 3px; ;
+}
 </style>
