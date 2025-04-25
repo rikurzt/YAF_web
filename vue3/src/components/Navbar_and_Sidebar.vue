@@ -70,7 +70,8 @@
     <!-- Sidebar for mobile -->
     <nav class="navbar  fixed-top justify-content-end d-lg-none d-md-flex nav-bg ">
       <button
-          class="btn btn-primary my-3 mx-5"
+          class="btn btn-dark my-3 mx-5"
+          style="opacity: 85%"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#sidebar"
@@ -80,33 +81,33 @@
       </button>
     </nav>
 
-    <div class="d-lg-none fixed-top  d-flex side-bg ">
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+    <div class="d-lg-none fixed-top  d-flex ">
+      <div class="offcanvas offcanvas-start sidebar-bg" tabindex="-1" id="sidebar">
         <div class="offcanvas-header">
           <svg width="96" height="48" >
             <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="48"  />
           </svg>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
-        <div class="offcanvas-body">
-          <ul class="list-group"
+        <div class="offcanvas-body sidebar-bg">
+          <ul class="list-group "
               data-bs-dismiss="offcanvas">
             <li
                 v-for="(menu, index) in menus"
                 :key="'sidebar-' + index"
-                class="list-group-item"
+                class="list-group-item "
             >
               <router-link
                   v-if="menu.children.length === 0"
                   :to="menu.link"
-                  class="text-decoration-none"
+                  class="text-decoration-none sidebar-link "
 
               >
                 {{ menu.name }}
               </router-link>
               <a
                   v-else
-                  class="d-flex justify-content-between align-items-center"
+                  class="d-flex justify-content-between align-items-center sidebar-link "
                   data-bs-toggle="collapse"
                   :href="'#sidebarSubmenu' + index"
                   role="button"
@@ -116,23 +117,23 @@
 
               >
                 {{ menu.name }}
-                <span class="dropdown-toggle"></span>
+                <span class="dropdown-toggle "></span>
               </a>
               <ul
                   v-if="menu.children.length > 0"
-                  class="collapse list-group"
+                  class="collapse list-group "
                   :id="'sidebarSubmenu' + index"
                   data-bs-dismiss="offcanvas"
               >
                 <li
                     v-for="(child, cIndex) in menu.children"
                     :key="'sidebar-child-' + cIndex"
-                    class="list-group-item"
+                    class="list-group-item "
                     @click="closeSidebar"
                 >
                   <router-link
                       :to="child.link"
-                      class="text-decoration-none"
+                      class="text-decoration-none sidebar-link "
                       @click="closeSidebar"
                   >
                     {{ child.name }}
@@ -275,14 +276,14 @@ body {
   font-weight: bold;
   color: #ffffff !important;
   transition: 0.7s;
-  text-shadow: 0 0 10px rgba(0, 255, 235, 0.75),0 0 20px rgba(0, 255, 235, 0.75),0 0 30px rgba(0, 255, 235, 0.75),0 0 40px rgba(0, 255, 235, 0.75);
+  text-shadow: 0 0 10px rgba(0, 196, 255, 0.4),0 0 20px rgba(0, 196, 255, 0.4),0 0 30px rgba(0, 196, 255, 0.4),0 0 40px rgba(0, 196, 255, 0.4);
 
 }
 .active-link > .nav-link:hover {
   font-weight: bold;
   color: #ffffff !important;
   transition: 0.5s;
-  text-shadow: 0 0 10px rgba(0, 255, 235, 0.75),0 0 20px rgba(0, 255, 235, 0.75),0 0 30px rgba(0, 255, 235, 0.75),0 0 40px rgba(0, 255, 235, 0.75),#ffffff 20px 5px 3px;
+  text-shadow: 0 0 10px rgba(0, 196, 255, 0.4),0 0 20px rgba(0, 196, 255, 0.4),0 0 30px rgba(0, 196, 255, 0.4),0 0 40px rgba(0, 196, 255, 0.4),#ffffff 20px 5px 3px;
 }
 .nav-link{
   --bs-nav-link-color: rgba(255, 255, 255, 0.8);
@@ -293,5 +294,13 @@ body {
   font-weight: bold;
   transition: 0.5s;
   text-shadow: #ffffff 20px 5px 3px; ;
+}
+.sidebar-link{
+  color: rgb(255, 255, 255);
+}
+.sidebar-bg{
+  background-color: rgba(0, 179, 94, 50);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 </style>
