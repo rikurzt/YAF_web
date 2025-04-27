@@ -34,7 +34,7 @@
         <ul class="list-disc text-lg list-inside my-6">
           <li class="my-1">
             騎行至<strong class="font-bold">龍潭路</strong>後於<strong class="font-bold"
-          >合作金庫</strong
+          >合作金庫ATM</strong
           >附近有機車停車場，再<strong class="font-bold">步行</strong>前往活動現場。
           </li>
         </ul>
