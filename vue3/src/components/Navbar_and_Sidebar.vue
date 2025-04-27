@@ -19,8 +19,8 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
+        <div class="collapse navbar-collapse " id="navbarNav">
+          <ul class="navbar-nav me-auto ">
             <li
                 v-for="(menu, index) in menus"
                 :key="'navbar-' + index"
@@ -30,14 +30,14 @@
               <!-- 主選項 -->
               <router-link
                   v-if="menu.children.length === 0"
-                  class="nav-link"
+                  class="nav-link "
                   :to="menu.link"
               >
                 {{ menu.name }}
               </router-link>
               <a
                   v-else
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle "
                   href="#"
                   :id="'navbarDropdown' + index"
                   role="button"
@@ -49,14 +49,14 @@
               <!-- 子選項 -->
               <ul
                   v-if="menu.children.length > 0"
-                  class="dropdown-menu"
+                  class="dropdown-menu "
                   :aria-labelledby="'navbarDropdown' + index"
               >
                 <li
                     v-for="(child, cIndex) in menu.children"
                     :key="'navbar-child-' + cIndex"
                 >
-                  <router-link class="dropdown-item" :to="child.link">
+                  <router-link class="dropdown-item " :to="child.link">
                     {{ child.name }}
                   </router-link>
                 </li>
@@ -68,34 +68,34 @@
     </nav>
 
     <!-- Sidebar for mobile -->
-    <nav class="navbar  fixed-top justify-content-end d-lg-none d-md-flex nav-bg ">
+    <nav class="navbar fixed-top justify-content-end d-lg-none d-md-flex nav-bg ">
       <button
           class="btn btn-dark my-3 mx-5"
-          style="opacity: 85%"
+          style="opacity: 40%"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#sidebar"
           aria-controls="sidebar"
       >
-        ☰ Menu
+        ☰
       </button>
     </nav>
 
     <div class="d-lg-none fixed-top  d-flex ">
-      <div class="offcanvas offcanvas-start sidebar-bg" tabindex="-1" id="sidebar">
-        <div class="offcanvas-header">
-          <svg width="96" height="48" >
-            <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="48"  />
+      <div class="offcanvas offcanvas-start sidebar-bg offcanvas-fullscreen" tabindex="-1" id="sidebar">
+        <div class="offcanvas-header sidebar-bg ">
+          <svg width="96" height="40" class="mx-3">
+            <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="50"  />
           </svg>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body sidebar-bg">
-          <ul class="list-group "
+          <ul class="list-group sidebar-bg"
               data-bs-dismiss="offcanvas">
             <li
                 v-for="(menu, index) in menus"
                 :key="'sidebar-' + index"
-                class="list-group-item "
+                class="list-group-item sidebar-bg"
             >
               <router-link
                   v-if="menu.children.length === 0"
@@ -123,17 +123,16 @@
                   v-if="menu.children.length > 0"
                   class="collapse list-group "
                   :id="'sidebarSubmenu' + index"
-                  data-bs-dismiss="offcanvas"
               >
                 <li
                     v-for="(child, cIndex) in menu.children"
                     :key="'sidebar-child-' + cIndex"
-                    class="list-group-item "
+                    class="list-group-item sidebar-bg"
                     @click="closeSidebar"
                 >
                   <router-link
                       :to="child.link"
-                      class="text-decoration-none sidebar-link "
+                      class="text-decoration-none sidebar-link  "
                       @click="closeSidebar"
                   >
                     {{ child.name }}
@@ -215,13 +214,11 @@ export default  defineComponent({
       return false;
     },
     closeSidebar() {
-      const win:any = window
       const offcanvasElement = document.getElementById("sidebar");
-      if (win.bootstrap) {
-        const bsOffcanvas = win.bootstrap.Offcanvas.getInstance(offcanvasElement);
+      if (offcanvasElement) {
+        const bsOffcanvas = window.bootstrap?.Offcanvas.getInstance(offcanvasElement);
         if (bsOffcanvas) {
           bsOffcanvas.hide();
-
         }
       }
     },
@@ -240,9 +237,6 @@ body {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: rgba(0, 0, 0, 0.35) 0 3px 7px 0;
-
-}
-.side-bg{
 
 }
 .nav-item{
@@ -265,7 +259,8 @@ body {
 }
 
 .dropdown-menu {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out ;
+
 }
 .active-link {
   font-weight: bold;
@@ -297,10 +292,19 @@ body {
 }
 .sidebar-link{
   color: rgb(255, 255, 255);
+  font-size: 18px !important;
 }
 .sidebar-bg{
-  background-color: rgba(0, 179, 94, 50);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  --bs-offcanvas-bg: rgba(18, 28, 24, 0.4) !important;
+  --bs-list-group-bg: rgba(18, 28, 24, 0.4) !important;
+  background-color: rgba(18, 28, 24, 0.4) !important;
+  backdrop-filter: blur(7px);
+}
+.offcanvas-fullscreen{
+  width: 100vw!important;
+  height: 100vh;
+}
+.change-my-color {
+  filter: brightness(0) saturate(100%) invert(100%)   ;
 }
 </style>
