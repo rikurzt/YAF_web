@@ -214,11 +214,13 @@ export default  defineComponent({
       return false;
     },
     closeSidebar() {
+      const win:any = window
       const offcanvasElement = document.getElementById("sidebar");
-      if (offcanvasElement) {
-        const bsOffcanvas = window.bootstrap?.Offcanvas.getInstance(offcanvasElement);
+      if (win.bootstrap) {
+        const bsOffcanvas = win.bootstrap.Offcanvas.getInstance(offcanvasElement);
         if (bsOffcanvas) {
           bsOffcanvas.hide();
+
         }
       }
     },
