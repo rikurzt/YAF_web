@@ -49,7 +49,7 @@ export default {
     const onScroll = () => {
       if (containerRef.value) {
         const rect = containerRef.value.getBoundingClientRect();
-        if (rect.top <= 100 && !isVisible.value) {
+        if (rect.top <= 350 && !isVisible.value) {
           isVisible.value = true;
           window.removeEventListener('scroll', onScroll);
         }
@@ -96,7 +96,7 @@ export default {
 .fade-section {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 .fade-section.visible {
   opacity: 1;
