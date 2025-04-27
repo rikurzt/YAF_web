@@ -4,7 +4,7 @@ import ContentBlock from "../components/ContentBlock.vue";
 </script>
 
 <template>
-  <ContentBlock title="最新消息" content=" " />
+  <ContentBlock title="最新消息" content=" " :force-visible="true"/>
   <div class="my-5 pb-lg-5 "></div>
   <!-- 使用 https://www.commoninja.com/facebook-feed/ 製作-->
   <div class="container">

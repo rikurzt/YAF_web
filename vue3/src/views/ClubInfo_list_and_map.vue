@@ -118,7 +118,7 @@ const cardData:any = [
 </script>
 
 <template>
-  <ContentBlock title="參展社團" :content="Gallary" :isComponent="true" :component-props="{cards: cardData}" :disable="true"/>
+  <ContentBlock title="參展社團" :content="Gallary" :isComponent="true" :component-props="{cards: cardData}" :disable="true" :force-visible="true"/>
 
 </template>
 

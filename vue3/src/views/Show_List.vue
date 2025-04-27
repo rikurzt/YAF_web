@@ -7,7 +7,7 @@ import ContentBlock from "../components/ContentBlock.vue";
 
 <template>
 
-  <ContentBlock title="表演時間" content=""  />
+  <ContentBlock title="表演時間" content=""  :force-visible="true"/>
 
 
 

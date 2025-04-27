@@ -5,7 +5,7 @@ import ContentBlock from "../components/ContentBlock.vue";
 
 <template>
 
-  <ContentBlock title="活動規範" content="/markdown/活動規範.md" :isMarkdown="true" />
+  <ContentBlock title="活動規範" content="/markdown/活動規範.md" :isMarkdown="true" :force-visible="true"/>
 
 </template>
 

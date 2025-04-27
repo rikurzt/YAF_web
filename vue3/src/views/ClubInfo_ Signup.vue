@@ -5,7 +5,7 @@ import Group_Sign from "../components/Group_Sign.vue";
 </script>
 
 <template>
-  <ContentBlock title="攤位報名重要日程" :content="Group_Sign" :isComponent="true"/>
+  <ContentBlock title="攤位報名重要日程" :content="Group_Sign" :isComponent="true" :force-visible="true"/>
 
   <ContentBlock title="報名相關資訊" content="/markdown/社團報名方式.md" :isMarkdown="true" />
   <ContentBlock title="報名表單" content="   "  />
