@@ -1,1 +1,0 @@
-import{d as o,o as r,c as s,b as t,_ as a}from"./index-BcapfXgA.js";const c={class:"iframe-wrapper"},_=["src"],n=o({__name:"Google_Sheet",props:{src:{}},setup(i){return(e,p)=>(r(),s("div",c,[t("iframe",{src:e.src,frameborder:"0",marginheight:"0",marginwidth:"0",width:"640",height:"2066"}," 載入中… ",8,_)]))}}),h=a(n,[["__scopeId","data-v-285c5f01"]]);export{h as G};
