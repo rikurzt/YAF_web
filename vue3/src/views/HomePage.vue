@@ -3,6 +3,7 @@
 import ContentBlock from "../components/ContentBlock.vue";
 import ParallaxImage from '../components/ParallaxImage.vue'
 import FB_page from "../components/FB_page.vue";
+import HomePage_activity_info from "../components/HomePage_activity_info.vue";
 </script>
 
 <template>
@@ -22,9 +23,9 @@ import FB_page from "../components/FB_page.vue";
           alt="132"
           :offsetMultiplier="{ desktop: 0.35, tablet: 0.35, mobile: 0.35 }"
           :top="{ desktop: '6vw', tablet: '50%', mobile: '60vw' }"
-          :left="{ desktop: '0.75vw', mobile: '-100vw' }"
+          :left="{ desktop: '0vw', mobile: '-100vw' }"
           :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
-          :width="{ desktop: '100%', tablet: '150px', mobile: '320%' }"
+          :width="{ desktop: '110%', tablet: '150px', mobile: '320%' }"
       />
       <ParallaxImage
           src="/img/HomePage_Main_art_rock_back_2.png"
@@ -37,12 +38,13 @@ import FB_page from "../components/FB_page.vue";
           :width="{ desktop: '100%', tablet: '150px', mobile: '250%' }"
       />
       <ParallaxImage
+          class="fog-image"
           src="/img/HomePage_Main_art_Fog.png"
           direction="right"
           alt="132"
           :offsetMultiplier="{ desktop: 0.3, tablet: 0.3, mobile: 0.3 }"
           :top="{ desktop: '2.9vw', tablet: '50%', mobile: '70vw' }"
-          :left="{ desktop: '0vw', mobile: '-100vw' }"
+          :left="{ desktop: '-5vw', mobile: '-100vw' }"
           :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
           :width="{ desktop: '100%', tablet: '150px', mobile: '300%' }"
       />
@@ -57,6 +59,16 @@ import FB_page from "../components/FB_page.vue";
           :width="{ desktop: '32.5%', tablet: '150px', mobile: '110%' }"
       />
       <ParallaxImage
+          src="/img/HomePage_Main_art_Bush_back.png"
+          direction="left"
+          alt="132"
+          :offsetMultiplier="{ desktop: 0.0, tablet: 0.0, mobile: 0.0 }"
+          :top="{ desktop: '20vw', tablet: '50%', mobile: '170vw' }"
+          :left="{ desktop: '0vw', mobile: '-20vw' }"
+          :right="{ desktop: '0', tablet: '0' }"
+          :width="{ desktop: '100%', tablet: '150px', mobile: '70%' }"
+      />
+      <ParallaxImage
           src="/img/HomePage_Main_art_rock.png"
           direction="down"
           alt="132"
@@ -66,6 +78,7 @@ import FB_page from "../components/FB_page.vue";
           :right="{ desktop: '0', tablet: '0' ,mobile: '0'}"
           :width="{ desktop: '32.5%', tablet: '150px', mobile: '90%' }"
       />
+
       <ParallaxImage
           src="/img/HomePage_Main_art_Bush_L.png"
           direction="left"
@@ -91,6 +104,7 @@ import FB_page from "../components/FB_page.vue";
     <img alt="" class="main-art img-fluid" src="/img/HomePage_Main_art_bg.png"/>
 
     <div class="cover-container d-flex fixed-height w-100 h-100 p-5 m-5 mx-auto flex-column">
+      <ContentBlock title="活動簡介" :content="HomePage_activity_info" :is-component="true" />
       <ContentBlock title="最新消息" :content="FB_page" :is-component="true" />
     </div>
   </div>
@@ -299,6 +313,21 @@ body {background: #222;}
         rotate(0deg);
     opacity: 0;
   }
+}
+@keyframes float-left-right {
+  0% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(40px); /* 向右偏移 20px */
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.fog-image {
+  animation: float-left-right 12s ease-in-out infinite;
 }
 
 

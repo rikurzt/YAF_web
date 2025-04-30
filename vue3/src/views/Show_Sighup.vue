@@ -12,7 +12,9 @@ import Google_Sheet from "../components/Google_Sheet.vue";
       :content="Google_Sheet"
       :isComponent="true"
       :componentProps="{
-      src: 'https://docs.google.com/forms/d/e/1FAIpQLScT-nQ0Jus0W_HfFRQGlYb-ir6ut5cRBBCP8Y2E8mDd_zlaFg/viewform?embedded=true'
+      src: 'https://docs.google.com/forms/d/e/1FAIpQLScT-nQ0Jus0W_HfFRQGlYb-ir6ut5cRBBCP8Y2E8mDd_zlaFg/viewform?embedded=true',
+      height: 800
+
     }"
   />
 

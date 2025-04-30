@@ -14,7 +14,8 @@ import Google_Sheet from "../components/Google_Sheet.vue";
       :content="Google_Sheet"
       :isComponent="true"
       :componentProps="{
-      src: 'https://docs.google.com/forms/d/e/1FAIpQLScOGIws1M4o059aFfa75q6lCPPhjGVHYM0O9LKmVImhiqWLCg/viewform?embedded=true'
+      src: 'https://docs.google.com/forms/d/e/1FAIpQLScOGIws1M4o059aFfa75q6lCPPhjGVHYM0O9LKmVImhiqWLCg/viewform?embedded=true',
+      height: 2066
     }"
 
   />

@@ -1,33 +1,32 @@
+<template>
+  <iframe
+      :src="src"
+      :height="height"
+      width="100%"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+  >
+    載入中…
+  </iframe>
+</template>
+
 <script setup lang="ts">
 defineProps<{
   src: string
+  height?: number
 }>()
 </script>
 
-<template>
-  <div class="iframe-wrapper">
-    <iframe
-        :src="src"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        width="640"
-        height="2066"
-    >
-      載入中…
-    </iframe>
-  </div>
-</template>
 <style scoped>
 iframe {
-  width: 100%; /* 預設寬度為 100% */
-
+  width: 100%;
+  border: none;
 }
 
 @media only screen and (min-width: 1920px) {
   iframe {
     width: 1920px;
-
   }
 }
 
@@ -42,5 +41,4 @@ iframe {
     width: 280px;
   }
 }
-
 </style>

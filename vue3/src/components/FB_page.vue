@@ -29,7 +29,7 @@
 @media (max-width: 480px) {
   iframe {
     width: 130%;
-    scale: 1;
+    scale: 0.9;
   }
 }
 </style>
