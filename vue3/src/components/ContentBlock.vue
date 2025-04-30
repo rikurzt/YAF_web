@@ -96,7 +96,7 @@ export default {
 .fade-section {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .fade-section.visible {
   opacity: 1;

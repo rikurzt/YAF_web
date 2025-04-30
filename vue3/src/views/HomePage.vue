@@ -2,10 +2,18 @@
 
 import ContentBlock from "../components/ContentBlock.vue";
 import ParallaxImage from '../components/ParallaxImage.vue'
+import FB_page from "../components/FB_page.vue";
 </script>
 
 <template>
+
   <div class="parallax-container" style="position: relative;">
+    <div id="leaves">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+
     <!-- Parallax Images -->
     <div class="parallax-wrapper" >
       <ParallaxImage
@@ -83,8 +91,7 @@ import ParallaxImage from '../components/ParallaxImage.vue'
     <img alt="" class="main-art img-fluid" src="/img/HomePage_Main_art_bg.png"/>
 
     <div class="cover-container d-flex fixed-height w-100 h-100 p-5 m-5 mx-auto flex-column">
-      <ContentBlock title="最新消息" content=" " />
-      <iframe class="my-lg-5" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FYunlinAnimeFestival%3Flocale%3Dzh_TW&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="350" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      <ContentBlock title="最新消息" :content="FB_page" :is-component="true" />
     </div>
   </div>
 
@@ -103,13 +110,7 @@ import ParallaxImage from '../components/ParallaxImage.vue'
   display: block;
 }
 
-iframe {
-  width: 55%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scale: 1;
-}
+
 .parallax-container {
   position: relative;
 
@@ -122,11 +123,6 @@ iframe {
 }
 
 @media only screen and (min-width: 1080px) {
-  iframe {
-    scale: 1.3;
-    width: 54%;
-    padding-left: 33vw;
-  }
 
 }
 @media (max-width: 1050px) {
@@ -162,14 +158,148 @@ iframe {
     object-fit: cover;
     object-position: center;
   }
-  iframe {
-    width: 107%;
-    scale: 0.9;
-    padding-left: 0vw;
-  }
+}
+
+body {background: #222;}
+
+/* leaf animations */
+
+#leaves {position:relative;top:-50px;width:100%;text-align: right;}
+
+#leaves i {
+  display: inline-block;
+  width: 200px;
+  height: 150px;
+  background: linear-gradient(to bottom right, #309900, #005600);
+  transform: skew(20deg);
+  border-radius: 5% 40% 70%;
+  box-shadow: inset 0px 0px 1px #222;
+  border: 1px solid #333;
+  z-index: 9999;
+  -webkit-animation: falling 30s 0s infinite;
+
+}
+
+#leaves i:nth-of-type(2n) { -webkit-animation: falling2 3s 0s infinite; }
+#leaves i:nth-of-type(3n) { -webkit-animation: falling3 7s 0s infinite; }
+
+#leaves i:before {
+  position: absolute;
+  content: '';
+  top: 117px;
+  right: 9px;
+  height: 27px;
+  width: 32px;
+  transform: rotate(49deg);
+  border-radius: 0% 15% 15% 0%;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  border-left: 0px solid #222;
+  border-right: 1px solid #222;
+  background: linear-gradient(to right, rgba(0,100,0,1), #005600);
+  z-index: 9999;
+}
+
+#leaves i:after {
+  content: '';
+  height: 125px;
+  width: 10px;
+  background: linear-gradient(to right, rgba(0,0,0,.15), rgba(0,0,0,0));
+  display: block;
+  transform: rotate(125deg);
+  position: absolute;
+  left: 85px;
+  border-radius:50%;
+  z-index: 9999;
 }
 
 
+#leaves i:nth-of-type(n)    { height:23px; width:30px; }
+#leaves i:nth-of-type(n):before { width:7px; height:5px; top:17px; right:1px; }
+#leaves i:nth-of-type(n):after { width:2px; height:17px; left: 12px; top:0px; }
+
+#leaves i:nth-of-type(2n+1)    { height:11px; width:16px; }
+#leaves i:nth-of-type(2n+1):before { width:4px; height:3px; top:7px; right:0px; }
+#leaves i:nth-of-type(2n+1):after { width:2px; height:6px; left: 5px; top:1px; }
+
+#leaves i:nth-of-type(3n+2)  { height:17px; width:23px; }
+#leaves i:nth-of-type(3n+2):before  { height:4px; width:4px; top:12px; right:1px; }
+#leaves i:nth-of-type(3n+2):after  { height:10px; width:2px; top:1px; left:8px; }
+
+#leaves i:nth-of-type(n)   { -webkit-animation-delay: 1.9s;}
+#leaves i:nth-of-type(2n)  { -webkit-animation-delay: 3.9s;}
+#leaves i:nth-of-type(3n)  { -webkit-animation-delay: 2.3s;}
+#leaves i:nth-of-type(4n)  { -webkit-animation-delay: 4.4s;}
+#leaves i:nth-of-type(5n)  { -webkit-animation-delay: 5s;  }
+#leaves i:nth-of-type(6n)  { -webkit-animation-delay: 3.5s;}
+#leaves i:nth-of-type(7n)  { -webkit-animation-delay: 2.8s;}
+#leaves i:nth-of-type(8n)  { -webkit-animation-delay: 1.5s;}
+#leaves i:nth-of-type(9n)  { -webkit-animation-delay: 3.3s;}
+#leaves i:nth-of-type(10n) { -webkit-animation-delay: 2.5s;}
+#leaves i:nth-of-type(11n) { -webkit-animation-delay: 1.2s;}
+#leaves i:nth-of-type(12n) { -webkit-animation-delay: 4.1s;}
+#leaves i:nth-of-type(13n) { -webkit-animation-delay: 1s;  }
+#leaves i:nth-of-type(14n) { -webkit-animation-delay: 4.7s;}
+#leaves i:nth-of-type(15n) { -webkit-animation-delay: 3s;  }
+
+#leaves i:nth-of-type(n)    { background: linear-gradient(to bottom right, #309900, #005600); }
+#leaves i:nth-of-type(2n+2)  { background: linear-gradient(to bottom right, #5e9900, #2b5600); }
+#leaves i:nth-of-type(4n+1)  { background: linear-gradient(to bottom right, #990, #564500); }
+
+#leaves i:nth-of-type(n)    { opacity: .7;}
+#leaves i:nth-of-type(3n+1)  { opacity: .5;}
+#leaves i:nth-of-type(3n+2)  { opacity: .3;}
+
+#leaves i:nth-of-type(n)    {transform: rotate(180deg);}
+
+
+#leaves i:nth-of-type(n) { -webkit-animation-timing-function:ease-in-out;}
+
+@-webkit-keyframes falling {
+
+  0% {
+    -webkit-transform:
+        translate3d(300px,0px,0px)
+        rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform:
+        translate3d(-350px,1000px,0)
+        rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes falling3 {
+  0% {
+    -webkit-transform:
+        translate3d(0,0,0)
+        rotate(-20deg);
+  }
+
+
+  100% {
+    -webkit-transform:
+        translate3d(-230px,640px,0)
+        rotate(-70deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes falling2 {
+  0% {
+    -webkit-transform:
+        translate3d(0,0,0)
+        rotate(90deg);
+  }
+  100% {
+    -webkit-transform:
+        translate3d(-400px,680px,0)
+        rotate(0deg);
+    opacity: 0;
+  }
+}
 
 
 </style>
