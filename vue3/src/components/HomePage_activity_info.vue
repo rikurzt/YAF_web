@@ -10,6 +10,7 @@
         <img class="img-fluid" src="/img/主視覺海報0622_B.png" alt="">
       </div>
       <div class="col-lg col-md-6">
+        <h2 class="text-xl font-bold mt-2 mb-2">2025雲緣起YF07</h2>
         <h2 class="text-xl font-bold mt-2 mb-2">活動時間</h2>
         <h4 class=" text-lg  my-6">
             2025.06.22 SUN 10:00~17:00
