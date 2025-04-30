@@ -1,5 +1,7 @@
 <script setup lang="ts">
-
+defineProps<{
+  src: string
+}>()
 </script>
 
 <template>
@@ -9,7 +11,8 @@
         frameborder="0"
         marginheight="0"
         marginwidth="0"
-        allowfullscreen
+        width="640"
+        height="2066"
     >
       載入中…
     </iframe>
