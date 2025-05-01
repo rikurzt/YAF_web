@@ -49,7 +49,7 @@ export default {
     const onScroll = () => {
       if (containerRef.value) {
         const rect = containerRef.value.getBoundingClientRect();
-        if (rect.top <= 350 && !isVisible.value) {
+        if (rect.top <= 300 && !isVisible.value) {
           isVisible.value = true;
           window.removeEventListener('scroll', onScroll);
         }

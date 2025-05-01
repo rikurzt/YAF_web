@@ -30,7 +30,7 @@
               <!-- 主選項 -->
               <router-link
                   v-if="menu.children.length === 0"
-                  class="nav-link "
+                  class="nav-link"
                   :to="menu.link"
               >
                 {{ menu.name }}
@@ -71,11 +71,12 @@
     <nav class="navbar fixed-top justify-content-end d-lg-none d-md-flex nav-bg ">
       <button
           class="btn btn-dark my-3 mx-5"
-          style="opacity: 40%"
+          style="opacity: 40%;  z-index: 9999; position: sticky"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#sidebar"
           aria-controls="sidebar"
+
       >
         ☰
       </button>
@@ -87,7 +88,7 @@
           <svg width="96" height="40" class="mx-3">
             <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="50"  />
           </svg>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+          <button type="button" class="btn-close btn-close-white justify-content-end px-4" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body sidebar-bg">
           <ul class="list-group sidebar-bg"
@@ -199,6 +200,11 @@ export default  defineComponent({
           link: "/aboutus",
           children: [],
         },
+        {
+          name: "預定圖製作器",
+          link: "/CardMaker",
+          children: [],
+        },
       ],
     };
   },
@@ -239,7 +245,8 @@ body {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: rgba(0, 0, 0, 0.35) 0 3px 7px 0;
-
+  z-index: 9998;
+  max-width: 100vw;
 }
 .nav-item{
   margin-right: 16px;

@@ -99,6 +99,13 @@ const routes = [
             import("../views/PrivacyPolicy.vue"),
         props: true
     },
+    {
+        path: '/CardMaker',
+        name: './CardMaker.vue',
+        component: ()=>
+            import("../views/CardMaker.vue"),
+        props: true
+    },
 ];
 
 const router = createRouter({

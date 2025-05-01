@@ -174,11 +174,15 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
   }
 }
 
-body {background: #222;}
-
 /* leaf animations */
+/*待修:葉子動畫 hover 閃爍問題 */
+#leaves {
+  position: relative;
+  top: -50px;
+  width: 100%;
+  text-align: right;
+}
 
-#leaves {position:relative;top:-50px;width:100%;text-align: right;}
 
 #leaves i {
   display: inline-block;
@@ -189,7 +193,6 @@ body {background: #222;}
   border-radius: 5% 40% 70%;
   box-shadow: inset 0px 0px 1px #222;
   border: 1px solid #333;
-  z-index: 9999;
   -webkit-animation: falling 30s 0s infinite;
 
 }
@@ -226,6 +229,20 @@ body {background: #222;}
   border-radius:50%;
   z-index: 9999;
 }
+
+#leaves i:hover {
+  animation-play-state: paused;  /* 暫停動畫 */
+  transform: translate(-40px, -60px) rotate(360deg) scale(1.4) !important;
+  z-index: 10;  /* 確保葉子位於最上層 */
+  opacity: 1;  /* 不改變透明度，保持可見 */
+}
+
+/* 確保增加滑鼠範圍*/
+#leaves i:hover {
+  transform: translate(-40px, -60px) rotate(360deg) scale(1.4) !important;
+  opacity: 1;  /* 不改變透明度，保持可見 */
+}
+
 
 
 #leaves i:nth-of-type(n)    { height:23px; width:30px; }
@@ -273,7 +290,7 @@ body {background: #222;}
 
   0% {
     -webkit-transform:
-        translate3d(300px,0px,0px)
+        translate3d(0px,0px,0px)
         rotate(0deg);
   }
 
