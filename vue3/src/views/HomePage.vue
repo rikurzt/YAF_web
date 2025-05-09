@@ -105,7 +105,6 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
     <div class="cover-container d-flex fixed-height w-100 h-100 p-5 m-5 mx-auto flex-column">
       <ContentBlock title="活動簡介" :content="HomePage_activity_info" :is-component="true" />
       <ContentBlock title="最新消息" content=" " :force-visible="true"/>
-      <div class="my-lg-5 pb-lg-5 "></div>
       <!-- 使用 https://www.commoninja.com/facebook-feed/ 製作-->
 
       <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FYunlinAnimeFestival%3Flocale%3Dzh_TW&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -189,7 +188,7 @@ iframe {
 @media only screen and (min-width: 1080px) {
   iframe {
     scale: 1.35;
-    padding-left: 20vw;
+    padding-left: 30vw;
   }
   img{
     width: 50%
@@ -199,7 +198,7 @@ iframe {
 @media only screen and (max-width: 486px) {
   iframe {
     width: 100%;
-    scale: 1;
+    scale: 0.8;
 
   }
 }
