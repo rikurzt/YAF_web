@@ -39,7 +39,8 @@ iframe {
   iframe {
     width: 100%;
     scale: 1;
-    padding-left: 5vw;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

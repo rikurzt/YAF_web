@@ -2,7 +2,6 @@
 
 import ContentBlock from "../components/ContentBlock.vue";
 import ParallaxImage from '../components/ParallaxImage.vue'
-import FB_page from "../components/FB_page.vue";
 import HomePage_activity_info from "../components/HomePage_activity_info.vue";
 </script>
 
@@ -105,7 +104,12 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
 
     <div class="cover-container d-flex fixed-height w-100 h-100 p-5 m-5 mx-auto flex-column">
       <ContentBlock title="活動簡介" :content="HomePage_activity_info" :is-component="true" />
-      <ContentBlock title="最新消息" :content="FB_page" :is-component="true" />
+      <ContentBlock title="最新消息" content=" " :force-visible="true"/>
+      <div class="my-lg-5 pb-lg-5 "></div>
+      <!-- 使用 https://www.commoninja.com/facebook-feed/ 製作-->
+
+      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FYunlinAnimeFestival%3Flocale%3Dzh_TW&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      <div class="my-lg-5 pb-lg-5 "></div>
     </div>
   </div>
 
@@ -171,6 +175,32 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
     height: 100vh;
     object-fit: cover;
     object-position: center;
+  }
+}
+
+iframe {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1;
+}
+
+@media only screen and (min-width: 1080px) {
+  iframe {
+    scale: 1.35;
+    padding-left: 20vw;
+  }
+  img{
+    width: 50%
+  }
+}
+
+@media only screen and (max-width: 486px) {
+  iframe {
+    width: 100%;
+    scale: 1;
+
   }
 }
 

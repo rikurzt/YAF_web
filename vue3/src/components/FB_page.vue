@@ -1,35 +1,39 @@
 <template>
-  <div class="iframe-wrapper">
-    <iframe class="my-lg-5"
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FYunlinAnimeFestival%3Flocale%3Dzh_TW&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-            width="350" height="500" style="border:none;overflow:hidden"
-            scrolling="no" frameborder="0" allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-    </iframe>
+  <div class="my-5 pb-lg-5 "></div>
+  <div class="container">
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FYunlinAnimeFestival%3Flocale%3Dzh_TW&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
   </div>
+  <div class="my-5 pb-lg-5 "></div>
 </template>
 
 <style scoped>
-.iframe-wrapper {
+iframe {
+  width: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  scale: 1;
 }
 
 @media only screen and (min-width: 1080px) {
   iframe {
-    width: 54%;
-    scale: 1.3;
-
+    scale: 1.35;
+    padding-left: 20vw;
+  }
+  img{
+    width: 50%
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 486px) {
   iframe {
-    width: 130%;
-    scale: 0.9;
+    width: 90%;
+    scale: 1;
+    padding-left: 0;
+    padding-right: 0;
+
   }
 }
+
+
 </style>
