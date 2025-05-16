@@ -27,7 +27,7 @@ onMounted(() => {
     setTimeout(() => {
       loader.hide()
       console.log("所有圖片與資源都已載入完成，loading 關閉")
-    }, 0)  // 保證最少顯示 3 秒
+    }, 3)  // 保證最少顯示 3 秒
   }
 })
 </script>
@@ -47,6 +47,7 @@ onMounted(() => {
 .container-fluid{
   width: 100vw;
   height: max-content;
+  background-color: rgba(255, 0, 0, 0);
 }
 
 

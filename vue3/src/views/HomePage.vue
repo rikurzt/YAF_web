@@ -9,9 +9,7 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
 
   <div class="parallax-container" style="position: relative;">
     <div id="leaves">
-      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-      <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
     </div>
 
     <!-- Parallax Images -->
@@ -107,7 +105,7 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
       <ContentBlock title="最新消息" content=" " :force-visible="true"/>
       <!-- 使用 https://www.commoninja.com/facebook-feed/ 製作-->
 
-      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FYunlinAnimeFestival%3Flocale%3Dzh_TW&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FYunlinAnimeFestival%3Flocale%3Dzh_TW&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
       <div class="my-lg-5 pb-lg-5 "></div>
     </div>
   </div>
@@ -123,8 +121,9 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
   height: auto;
   max-height: 150vh;
   object-fit: cover;
-  object-position: center;
+  object-position: top center;
   display: block;
+
 }
 
 
@@ -178,7 +177,7 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
 }
 
 iframe {
-  width: 55%;
+  width: 50.8%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,9 +189,7 @@ iframe {
     scale: 1.35;
     padding-left: 30vw;
   }
-  img{
-    width: 50%
-  }
+
 }
 
 @media only screen and (max-width: 486px) {

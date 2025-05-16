@@ -4,12 +4,10 @@ export default {
   data() {
     return {
       images: [
-        "/img/Logo_Fake.png",
-        "/img/Logo_Fake.png",
-        "/img/Logo_Fake.png",
-        "/img/Logo_Fake.png",
-        "/img/Logo_Fake.png",
-        "/img/Logo_Fake.png"
+        "/img/合作圖_創設系會.png",
+        "/img/合作圖_數媒系會.png",
+        "/img/合作圖_跨域系會.png",
+        "/img/D-27國立雲林科技大學.png",
       ]
     };
   },

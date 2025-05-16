@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-  <div class="my-5 pb-lg-5"></div>
+  <div class="my-lg-5 pb-lg-5"></div>
 </template>
 
 <script lang="ts">
@@ -49,7 +49,7 @@ export default {
     const onScroll = () => {
       if (containerRef.value) {
         const rect = containerRef.value.getBoundingClientRect();
-        if (rect.top <= 300 && !isVisible.value) {
+        if (rect.top <= 200 && !isVisible.value) {
           isVisible.value = true;
           window.removeEventListener('scroll', onScroll);
         }
