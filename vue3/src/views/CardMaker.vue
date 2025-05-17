@@ -6,7 +6,7 @@ import CardMaker from "../components/CardMaker_Componment.vue";
 
 <template>
 
-  <ContentBlock title="預定圖製作器" :content="CardMaker" :is-component="true" :disable="true" :force-visible="true"/>
+  <ContentBlock title="預定圖製作器" :content="CardMaker" :is-component="true"  :force-visible="true"/>
 
 </template>
 <style scoped>

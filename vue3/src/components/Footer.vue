@@ -1,33 +1,48 @@
-<script  lang="ts">
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
 
-export default {
-  data() {
-    return {
-      images: [
-        "/img/合作圖_創設系會.png",
-        "/img/合作圖_數媒系會.png",
-        "/img/合作圖_跨域系會.png",
-        "/img/D-27國立雲林科技大學.png",
-      ]
-    };
-  },
-  created() {
-    for (let key in this.images) {
-      this.images[key] = import.meta.env.BASE_URL+this.images[key];
-    }
+const images_cooperate = ref([
+  "/img/合作圖_創設系會.png",
+  "/img/合作圖_數媒系會.png",
+  "/img/合作圖_跨域系會.png",
+  "/img/D-27國立雲林科技大學.png",
+]);
+
+const images_thanks = ref([
+
+]);
+
+const footerRef = ref<HTMLElement | null>(null);
+
+function updateBackgroundPosition() {
+  if (footerRef.value) {
+    const footerHeight = footerRef.value.offsetHeight-1;
+    document.body.style.backgroundPosition = `top center, bottom ${footerHeight}px center`;
   }
+}
 
-};
+onMounted(async () => {
+  // 加上 base url
+  const baseUrl = import.meta.env.BASE_URL;
+  images_cooperate.value = images_cooperate.value.map(img => baseUrl + img);
+  images_thanks.value = images_thanks.value.map(img => baseUrl + img);
 
+  await nextTick();
+  updateBackgroundPosition();
+  window.addEventListener('resize', updateBackgroundPosition);
+});
 
-
-
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateBackgroundPosition);
+});
 </script>
 
+
 <template>
-  <footer class=" text-center text-lg-start  " >
+
+  <footer  ref="footerRef" class=" text-center text-lg-start  " >
     <!-- container -->
-    <div class="container">
+    <div class="container text-center justify-content-center">
       <!-- Section: Social media -->
       <section class="m-4 mt-4">
         <div class="container">
@@ -63,7 +78,7 @@ export default {
             <a
                 class="btn text-white btn-floating m-3 d-flex align-items-center justify-content-center"
                 style="background-color: #ac2bac; width: 40px; height: 40px;"
-                href="#!"
+                href="https://www.instagram.com/yunlinanimefestival/"
                 role="button"
                 target="_blank"
             >
@@ -79,30 +94,58 @@ export default {
       <!-- Section: Social media -->
 
 
-      <!-- Section: 贊助商LOGO -->
-      <section class="ftcon container mt-5 mb-5 pb-3">
-        <div class="row justify-content-center mb-4">
-          <h1 class="text-center">特別感謝</h1>
-        </div>
+      <!-- Section: LOGO -->
+
+      <div class="container mt-4 mb-5 pb-3">
         <div class="row">
-          <div
-              class="col-lg-2 col-md-3 col-sm-4 col-4 mb-4"
-              v-for="(image, index) in images"
-              :key="index"
-          >
-            <div class="bg-image hover-overlay shadow-1-strong rounded">
-              <img v-bind:src="image" class="img-fluid w-100" alt="image" />
-            </div>
+          <!-- Section: 贊助商LOGO -->
+          <div class="col-md-6">
+            <section class="ftcon">
+              <div class="row justify-content-center mb-4">
+                <h1 class="text-center">特別感謝</h1>
+              </div>
+              <div class="row justify-content-center">
+                <div
+                    class="col-lg-4 col-md-6 col-sm-6 col-6 mb-4"
+                    v-for="(image, index) in images_thanks"
+                    :key="index"
+                >
+                  <div class="bg-image hover-overlay shadow-1-strong rounded">
+                    <img v-bind:src="image" class="img-fluid w-75" alt="image" />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Section: 合作單位LOGO -->
+          <div class="col-md-6">
+            <section class="ftcon">
+              <div class="row justify-content-center mb-4">
+                <h1 class="text-center">合作單位</h1>
+              </div>
+              <div class="row justify-content-center">
+                <div
+                    class="col-lg-4 col-md-6 col-sm-6 col-6 mb-4"
+                    v-for="(image, index) in images_cooperate"
+                    :key="index"
+                >
+                  <div class="bg-image hover-overlay shadow-1-strong rounded">
+                    <img v-bind:src="image" class="img-fluid w-75" alt="image" />
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- Section: 贊助商LOGO -->
 
 
       <!-- Section: under parts -->
       <section class="sss container">
-        <div class="row align-items-center py-3 border-top">
+        <div class="row align-items-center  border-top">
           <div class="col-4 text-start">
             <p class="mb-0 text-body-secondary">© 2025 雲緣起執行委員會</p>
           </div>
