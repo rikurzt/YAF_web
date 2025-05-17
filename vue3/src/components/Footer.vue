@@ -9,7 +9,7 @@ const images_cooperate = ref([
 ]);
 
 const images_thanks = ref([
-
+  "",
 ]);
 
 const footerRef = ref<HTMLElement | null>(null);
@@ -151,7 +151,7 @@ onBeforeUnmount(() => {
           </div>
 
           <div class="col-4 text-center">
-            <a href="/" class="d-inline-block link-body-emphasis text-decoration-none">
+            <a href="/#" class="d-inline-block link-body-emphasis text-decoration-none">
               <svg width="96" height="96">
                 <image class=" " xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="96" />
               </svg>

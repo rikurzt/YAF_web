@@ -178,7 +178,7 @@ export default  defineComponent({
           children: [
             { name: "報名參展", link: "/ClubInfo/Signup" },
             { name: "社團規範", link: "/ClubInfo/Rule" },
-            { name: "社團名單與攤位圖", link: "/ClubInfo/list_and_map" },
+            { name: "參展社團名單", link: "/ClubInfo/list_and_map" },
           ],
         },
         {
@@ -194,8 +194,8 @@ export default  defineComponent({
           name: "場地資訊",
           link: "#",
           children: [
-            { name: "場地平面圖", link: "/SiteInfo/Map" },
-            { name: "交通方式", link: "/SiteInfo/traffic" },
+            { name: "攤位位置圖", link: "/SiteInfo/Map" },
+            { name: "平面圖與交通方式", link: "/SiteInfo/traffic" },
           ],
         },
         {

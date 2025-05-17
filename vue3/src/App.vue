@@ -7,14 +7,18 @@ import { ref, onMounted } from 'vue'
 
 
   const fullPage:any = ref(true)
-  const onCancel:any = ref(false)
   const formContainer:any = ref(null)
   const $loading =  useLoading({})
+
+  // onCancel 處理函數
+  const onCancelHandler = () => {
+    console.log('Loading cancelled')
+  }
 
   const loader=$loading.show({
     container: fullPage.value ? null : formContainer.value,
     canCancel: false,
-    onCancel: onCancel.value,
+    onCancel: onCancelHandler,
     color: '#000000',
     backgroundColor:'#ffffff',
     opacity:1,
@@ -22,13 +26,16 @@ import { ref, onMounted } from 'vue'
   });
 
 onMounted(() => {
-  window.onload = () => {
-    // 設定一個延遲時間，確保動畫至少顯示 3 秒
-    setTimeout(() => {
-      loader.hide()
-      console.log("所有圖片與資源都已載入完成，loading 關閉")
-    }, 3)  // 保證最少顯示 3 秒
-  }
+  // 直接設定 3 秒延遲，不依賴 window.onload
+  setTimeout(() => {
+    loader.hide()
+    console.log("3 秒延遲後，loading 關閉")
+  }, 3000)  // 3000 毫秒 = 3 秒
+  
+  // 如果需要等待資源載入完成，可以額外監聽 window.onload
+  window.addEventListener('load', () => {
+    console.log("所有資源已載入完成")
+  })
 })
 </script>
 

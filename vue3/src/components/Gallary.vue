@@ -16,8 +16,12 @@ import CardItem from "./Club_CardItem.vue";
 interface Card {
   // Define the structure of a card object here
   title: string;
+  name: string;
   description: string;
-  imageUrl: string;
+  src: string;
+  tag: string;
+  number: string;
+  url?: string;  // 可選的網址欄位
 }
 
 defineProps({

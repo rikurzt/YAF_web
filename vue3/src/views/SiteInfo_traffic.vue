@@ -5,7 +5,7 @@ import traffic_page from "../components/traffic_page.vue"
 </script>
 
 <template>
-  <ContentBlock title="交通方式" :content="traffic_page" :isComponent="true" :force-visible="true"/>
+  <ContentBlock title="交通方式" :content="traffic_page" :isComponent="true" />
 
   <div class="my-5 pb-lg-5 "></div>
 

@@ -5,9 +5,9 @@
 <template>
 
   <div class="container">
-    <div class="row align-items-start">
+    <div class="row align-items-center">
       <div class="col-lg col-md-6">
-        <img class="img-fluid" src="/img/traffic_map.png" alt="">
+        <img class="img-fluid" src="/img/traffic_map.jpg" alt="">
       </div>
       <div class="col-lg col-md-6">
         <h3 class="text-xl font-bold mt-4 mb-4">🚃 大眾運輸</h3>

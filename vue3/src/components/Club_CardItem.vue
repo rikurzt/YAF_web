@@ -1,29 +1,35 @@
 <template>
   <div class="col">
-    <div class="card shadow-sm">
+    <div 
+      class="card shadow-sm" 
+      :class="{ 'clickable': card.url }"
+      @click="handleCardClick"
+    >
       <div class="image-wrapper position-relative">
         <!-- 倒三角標籤 -->
         <div v-if="card.number" class="label-triangle">
           <span class="label-text">{{ card.number }}</span>
         </div>
+        
+        <!-- 圖片區 -->
+        <div class="image-container">
+          <img
+              v-if="card.src"
+              :src="base_url+card.src"
+              alt="Card image"
+              class="card-img-top"
+          />
+          <!-- 預設 SVG 占位圖 -->
+          <svg v-else class="bd-placeholder-img card-img-top"
+               width="100%" height="100%"
+               xmlns="http://www.w3.org/2000/svg"
+               role="img" preserveAspectRatio="xMidYMid slice">
+            <title>{{ card.title }}</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect>
+            <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ card.imageText || 'No Image' }}</text>
+          </svg>
+        </div>
       </div>
-      <!-- 圖片區 -->
-      <img
-          v-if="card.src"
-          :src="base_url+card.src"
-          alt="Card image"
-          class="card-img-top"
-          style="height: 225px; object-fit: cover;"
-      />
-      <!-- 預設 SVG 占位圖 -->
-      <svg v-else class="bd-placeholder-img card-img-top"
-           width="100%" height="225"
-           xmlns="http://www.w3.org/2000/svg"
-           role="img" preserveAspectRatio="xMidYMid slice">
-        <title>{{ card.title }}</title>
-        <rect width="100%" height="100%" fill="#55595c"></rect>
-        <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ card.imageText || 'No Image' }}</text>
-      </svg>
 
       <!-- 卡片內容 -->
       <div class="card-body">
@@ -38,19 +44,41 @@
 </template>
 
 <script setup lang="ts" >
-defineProps({
+const { card } = defineProps({
   card: {
     type: Object,
     required: true
   }
 })
-const base_url = import.meta.env.BASE_URL
-</script>
 
+const base_url = import.meta.env.BASE_URL
+
+const handleCardClick = () => {
+  if (card.url && card.url.trim()) {
+    window.open(card.url.trim(), '_blank')
+  }
+}
+</script>
 
 <style scoped>
 .image-wrapper {
   position: relative;
+}
+
+.image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 保持正方形比例 */
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .label-triangle {
@@ -77,7 +105,26 @@ const base_url = import.meta.env.BASE_URL
   padding-top: 0.4rem;
   padding-right: 1rem;
 }
+
 .card-text{
   font-size: 0.75rem;
+}
+
+/* Hover 效果 */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card.clickable {
+  cursor: pointer;
+}
+
+.card.clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card.clickable:active {
+  transform: translateY(-2px);
 }
 </style>
