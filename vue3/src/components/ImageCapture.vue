@@ -10,11 +10,12 @@
 import { ref, defineExpose } from 'vue';
 import html2canvas from 'html2canvas';
 
-const props = defineProps<{
+defineProps<{
   title: string;
   subtitle: string;
   image: string | null;
 }>();
+
 
 const captureArea = ref<HTMLElement | null>(null);
 

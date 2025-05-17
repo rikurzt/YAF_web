@@ -9,7 +9,7 @@ const images_cooperate = ref([
 ]);
 
 const images_thanks = ref([
-
+  "",
 ]);
 
 const footerRef = ref<HTMLElement | null>(null);
