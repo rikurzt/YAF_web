@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg col-md-6">
-        <img class="img-fluid" src="/img/主視覺海報0622_B.png" alt="">
+        <img class="img-fluid" src="/img/主視覺海報0622_B.jpg" alt="">
       </div>
       <div class="col-lg col-md-6">
         <h2 class="text-xl font-bold mt-1 mb-2">2025雲緣起YF07</h2>

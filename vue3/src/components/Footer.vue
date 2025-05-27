@@ -3,8 +3,8 @@ import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
 
 const images_cooperate = ref([
   "/img/合作圖_創設系會.png",
-  "/img/合作圖_數媒系會.png",
-  "/img/合作圖_跨域系會.png",
+  "/img/合作圖_數媒系會.jpg",
+  "/img/合作圖_跨域系會.jpg",
   "/img/D-27國立雲林科技大學.png",
 ]);
 
@@ -151,11 +151,11 @@ onBeforeUnmount(() => {
           </div>
 
           <div class="col-4 text-center">
-            <a href="/#" class="d-inline-block link-body-emphasis text-decoration-none">
+            <router-link class="navbar-brand" to="/">
               <svg width="96" height="96">
                 <image class=" " xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="96" />
               </svg>
-            </a>
+            </router-link>
           </div>
 
           <div class="col-4 text-end ">

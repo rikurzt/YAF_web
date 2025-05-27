@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <img src="/img/club_map.jpg" height="780" width="974"/>
+  <img class="img-fluid" src="/img/club_map.jpg"/>
 </template>
 
 <style scoped>
