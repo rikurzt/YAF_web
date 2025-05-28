@@ -15,7 +15,7 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
     <!-- Parallax Images -->
     <div class="parallax-wrapper" >
       <ParallaxImage
-          src="/img/HomePage_Main_art_rock_back.png"
+          src="img/HomePage_Main_art_rock_back.png"
           direction="up"
           alt="132"
           :offsetMultiplier="{ desktop: 0.35, tablet: 0.35, mobile: 0.35 }"
@@ -25,7 +25,7 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
           :width="{ desktop: '110%', tablet: '150px', mobile: '320%' }"
       />
       <ParallaxImage
-          src="/img/HomePage_Main_art_rock_back_2.png"
+          src="img/HomePage_Main_art_rock_back_2.png"
           direction="down"
           alt="132"
           :offsetMultiplier="{ desktop: 0.2, tablet: 0.2, mobile: 0.2 }"
@@ -36,7 +36,7 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
       />
       <ParallaxImage
           class="fog-image"
-          src="/img/HomePage_Main_art_Fog.png"
+          src="img/HomePage_Main_art_Fog.png"
           direction="right"
           alt="132"
           :offsetMultiplier="{ desktop: 0.3, tablet: 0.3, mobile: 0.3 }"
@@ -46,7 +46,7 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
           :width="{ desktop: '100%', tablet: '150px', mobile: '300%' }"
       />
       <ParallaxImage
-          src="/svg/YF05_雲緣起LOGO-01.svg"
+          src="svg/YF05_雲緣起LOGO-01.svg"
           direction="right"
           alt="132"
           :offsetMultiplier="{ desktop: 0.6, tablet: 0.6, mobile: 0.6 }"
@@ -56,17 +56,17 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
           :width="{ desktop: '32.5%', tablet: '150px', mobile: '110%' }"
       />
       <ParallaxImage
-          src="/img/HomePage_Main_art_Bush_back.png"
+          src="img/HomePage_Main_art_Bush_back.png"
           direction="left"
           alt="132"
           :offsetMultiplier="{ desktop: 0.0, tablet: 0.0, mobile: 0.0 }"
-          :top="{ desktop: '20vw', tablet: '50%', mobile: '170vw' }"
-          :left="{ desktop: '0vw', mobile: '-20vw' }"
+          :top="{ desktop: '20vw', tablet: '50%', mobile: '150vw' }"
+          :left="{ desktop: '0vw', mobile: '-60vw' }"
           :right="{ desktop: '0', tablet: '0' }"
-          :width="{ desktop: '100%', tablet: '150px', mobile: '70%' }"
+          :width="{ desktop: '100%', tablet: '150px', mobile: '225%' }"
       />
       <ParallaxImage
-          src="/img/HomePage_Main_art_rock.png"
+          src="img/HomePage_Main_art_rock.png"
           direction="down"
           alt="132"
           :offsetMultiplier="{ desktop: 0.2, tablet: 0.2, mobile: 0.15 }"
@@ -77,7 +77,7 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
       />
 
       <ParallaxImage
-          src="/img/HomePage_Main_art_Bush_L.png"
+          src="img/HomePage_Main_art_Bush_L.png"
           direction="left"
           alt="132"
           :offsetMultiplier="{ desktop: 0.6, tablet: 0.55, mobile: 0.5 }"
@@ -87,7 +87,7 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
           :width="{ desktop: '50%', tablet: '150px', mobile: '70%' }"
       />
       <ParallaxImage
-          src="/img/HomePage_Main_art_Bush_R.png"
+          src="img/HomePage_Main_art_Bush_R.png"
           direction="right"
           alt="132"
           :offsetMultiplier="{ desktop: 0.6, tablet: 0.55, mobile: 0.5 }"

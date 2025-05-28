@@ -6,14 +6,14 @@
           <!-- 背景半透明 logo -->
           <img 
             class="logo-background" 
-            src="/svg/YF06_雲緣起LOGO.svg" 
+            :src="logoPath" 
             alt="雲緣起 Logo" 
           />
           <!-- 載入進度遮罩 -->
           <div class="logo-mask" :style="{ height: progress + '%' }">
             <img 
               class="logo-foreground" 
-              src="/svg/YF06_雲緣起LOGO.svg" 
+              :src="logoPath" 
               alt="雲緣起 Logo" 
             />
           </div>
@@ -24,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 interface Props {
   isVisible: boolean;
   progress: number;
@@ -31,6 +33,11 @@ interface Props {
 }
 
 defineProps<Props>();
+
+// 確保與 App.vue 使用相同的路徑
+const logoPath = computed(() => {
+  return `${import.meta.env.BASE_URL}svg/YF05_雲緣起LOGO-01.svg`
+});
 </script>
 
 <style scoped>
