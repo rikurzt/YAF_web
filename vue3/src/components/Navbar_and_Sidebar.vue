@@ -185,7 +185,7 @@ export default  defineComponent({
           name: "舞台展演",
           link: "#",
           children: [
-            { name: "表演報名", link: "/Show/Sighup" },
+            { name: "表演報名", link: "/Show/Signup" },
             { name: "舞台時間表", link: "/Show/List" },
             { name: "表演資訊公告", link: "/Show/GroupInfo" },
           ],
