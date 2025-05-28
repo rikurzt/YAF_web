@@ -9,7 +9,7 @@ const images_cooperate = ref([
 ]);
 
 const images_thanks = ref([
-  "",
+  "/img/dummy.png",
 ]);
 
 const footerRef = ref<HTMLElement | null>(null);
@@ -144,14 +144,14 @@ onBeforeUnmount(() => {
 
 
       <!-- Section: under parts -->
-      <section class="sss container">
+      <section class="container">
         <div class="row align-items-center  border-top">
           <div class="col-4 text-start">
             <p class="mb-0 text-body-secondary">© 2025 雲緣起執行委員會</p>
           </div>
 
           <div class="col-4 text-center">
-            <router-link class="navbar-brand" to="/">
+            <router-link  to="/">
               <svg width="96" height="96">
                 <image class=" " xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="96" />
               </svg>

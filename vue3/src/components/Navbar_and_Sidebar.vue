@@ -86,10 +86,9 @@
       <div class="offcanvas offcanvas-start sidebar-bg offcanvas-fullscreen" tabindex="-1" id="sidebar">
         <div class="offcanvas-header sidebar-bg ">
           <svg width="96" height="40" class="mx-3">
-            <a href="/#">
+            <router-link class="navbar-brand" to="/#" data-bs-dismiss="offcanvas">
               <image class="change-my-color" xlink:href="/svg/YF05_雲緣起LOGO-01.svg" width="96" height="50"  />
-            </a>
-
+            </router-link>
           </svg>
           <button type="button" class="btn-close btn-close-white justify-content-end px-4" data-bs-dismiss="offcanvas"></button>
         </div>
