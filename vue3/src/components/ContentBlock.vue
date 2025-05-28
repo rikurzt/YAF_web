@@ -7,8 +7,8 @@
     <div class="w-75 mx-auto">
       <h1 class="fw-bold display-2 text-start mb-sm-5 mt-5 pb-5 pt-5">{{ title }}</h1>
 
-      <div v-if="disable" class="text-center">
-        <img src="/img/not_open.png" alt="Not Available" class="img-fluid" style="height: 50vh;" />
+      <div v-if="disable" class="d-flex justify-content-center align-items-center" style="height: 50vh">
+        <img src="/img/not_open.png" alt="Not Available" style="height: 100%;" />
       </div>
       <div v-else>
         <div v-if="isHtml" v-html="content" class="text-start ps-lg-5 mx-auto fs-6"></div>
@@ -17,8 +17,8 @@
           <component :is="contentComponent" v-bind="componentProps"></component>
         </div>
         <p v-else-if="content" class="text-start ps-lg-5 mx-auto fs-6">{{ content }}</p>
-        <div v-else class="text-center">
-          <img src="/img/not_open.png" alt="Not Available" class="img-fluid" style="height: 50vh;" />
+        <div v-else class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+          <img src="/img/not_open.png" alt="Not Available" style="height: 100%;" />
         </div>
       </div>
     </div>

@@ -58,10 +58,10 @@ const routes = [
         props: true
     },
     {
-        path: '/Show/Sighup',
-        name: './Show_Sighup.vue',
+        path: '/Show/Signup',
+        name: './Show_Signup.vue',
         component: ()=>
-            import("../views/Show_Sighup.vue"),
+            import("../views/Show_Signup.vue"),
         props: true
     },
     {
