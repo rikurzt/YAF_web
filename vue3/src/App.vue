@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 import Navbar_and_Sidebar from "./components/Navbar_and_Sidebar.vue";
@@ -16,14 +16,14 @@ const hasInitialLoader = () => {
 const updateLoadingStatus = (progress: number, text: string) => {
   console.log(`${progress}% - ${text}`);
   
-  if (hasInitialLoader()) {
+  if (hasInitialLoader() && window.InitialLoader) {
     window.InitialLoader.updateProgress(progress, text);
   }
 };
 
 // 隱藏載入畫面
 const hideLoading = () => {
-  if (hasInitialLoader()) {
+  if (hasInitialLoader() && window.InitialLoader) {
     window.InitialLoader.hide();
   }
   console.log("所有資源載入完成，loading 關閉");
@@ -98,7 +98,7 @@ const checkImagesLoaded = (): Promise<void> => {
       console.log(`第 ${checkCount} 次檢查頁面圖片載入狀態...`);
       
       requestAnimationFrame(() => {
-        const images = document.querySelectorAll('img:not([class*="initial-"])');
+        const images = document.querySelectorAll('img:not([class*="initial-"])') as NodeListOf<HTMLImageElement>;
         let loadedCount = 0;
         const totalImages = images.length;
 
