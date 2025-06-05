@@ -19,40 +19,58 @@ const cardData = ref<CardData[]>([])
 const $loading = useLoading({})
 
 const parseCSV = (csvText: string): CardData[] => {
-  const lines = csvText.split('\n');
-  const headers = lines[0].split(',');
-  const rows: string[] = [];
-  let currentRow = '';
-
+  const lines = csvText.trim().split('\n');
+  if (lines.length < 2) return [];
+  
+  const headers = lines[0].split(',').map(h => h.trim());
+  const results: CardData[] = [];
+  
   for (let i = 1; i < lines.length; i++) {
-    if (!lines[i].trim()) continue;
-    currentRow += (currentRow ? '\n' : '') + lines[i];
-    const values = currentRow.split(',');
-    if (values.length === headers.length) {
-      rows.push(currentRow);
-      currentRow = '';
+    const line = lines[i].trim();
+    if (!line) continue;
+    
+    // 簡單的 CSV 解析 - 對於包含換行的欄位，我們需要更sophisticated的方法
+    const values = [];
+    let currentValue = '';
+    let inQuotes = false;
+    
+    for (let j = 0; j < line.length; j++) {
+      const char = line[j];
+      if (char === '"') {
+        inQuotes = !inQuotes;
+      } else if (char === ',' && !inQuotes) {
+        values.push(currentValue.trim());
+        currentValue = '';
+      } else {
+        currentValue += char;
+      }
     }
-  }
-
-  return rows.map(line => {
-    const values = line.split(',');
+    values.push(currentValue.trim());
+    
+    if (values.length < headers.length) continue;
+    
     const row: any = {};
     headers.forEach((header, index) => {
-      row[header.trim()] = values[index]?.trim() || '';
+      row[header] = values[index] || '';
     });
     
-
+    // 檢查是否有攤位名稱，如果沒有就跳過
+    if (!row['攤位名稱'] || !row['攤位名稱'].trim()) continue;
     
-    return {
+    const result: CardData = {
       title: row['攤位名稱'],
       src: row['正式位置'] ? `img/club/${row['正式位置'].trim()}.png` : `img/logo.png`,
       name: row['攤位名稱'],
-      description: row['攤位簡介'],
-      tag: row['Hashtag'] ? row['Hashtag'].split(' ').filter((tag: string) => tag.trim()).map((tag: string) => tag.trim().startsWith('#') ? tag.trim() : '#' + tag.trim()).join(' ') : '',
-      number: row['正式位置'],
+      description: row['攤位簡介'] || '',
+      tag: row['請幫你的攤位下Hashtag'] ? row['請幫你的攤位下Hashtag'].split(' ').filter((tag: string) => tag.trim()).map((tag: string) => tag.trim().startsWith('#') ? tag.trim() : '#' + tag.trim()).join(' ') : '',
+      number: row['正式位置'] || '',
       url: row['相關社群連結 (只能填一個連結)'] || '',
     };
-  });
+    
+    results.push(result);
+  }
+  
+  return results;
 };
 
 onMounted(async () => {
@@ -71,7 +89,7 @@ onMounted(async () => {
     const response = await fetch(import.meta.env.BASE_URL + '/club_info.csv')
     const csvText = await response.text()
     cardData.value = parseCSV(csvText)
-    console.log('社團資料載入完成')
+    console.log('社團資料載入完成',csvText)
   } catch (error) {
     console.error('Error loading CSV:', error)
   } finally {
