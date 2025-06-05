@@ -18,6 +18,23 @@
               <label class="form-label">上傳圖片</label>
               <input type="file" class="form-control" @change="handleFileUpload" accept="image/*" />
             </div>
+            
+            <!-- 圖片位置調整滑條 -->
+            <div v-if="imageDataUrl" class="mb-3">
+              <label class="form-label">圖片左右位置調整</label>
+              <div class="d-flex align-items-center gap-3">
+                <input 
+                  type="range" 
+                  class="form-range flex-grow-1" 
+                  min="-50" 
+                  max="50" 
+                  step="1" 
+                  v-model.number="imageOffsetX"
+                />
+              </div>
+              <small class="form-text text-muted">向左拖動向左移動圖片，向右拖動向右移動圖片</small>
+            </div>
+            
             <button class="btn btn-primary w-100 btn-lg" @click="capture">
               <i class="fas fa-download me-2"></i>下載圖片
             </button>
@@ -31,7 +48,7 @@
           <div class="card-body text-center p-2">
             <h5 class="card-title mb-3">圖片預覽</h5>
             <div class="preview-wrapper">
-              <ImageCapture ref="ImageCaptureRef" :title="title" :subtitle="subtitle" :image="imageDataUrl" />
+              <ImageCapture ref="ImageCaptureRef" :title="title" :subtitle="subtitle" :image="imageDataUrl" :image-offset-x="imageOffsetX" />
             </div>
           </div>
         </div>
@@ -50,6 +67,7 @@ const ImageCaptureRef = ref<ComponentPublicInstance<{ capture: () => void }> | n
 const title = ref('雲緣起');
 const subtitle = ref('COSER/攝影');
 const imageDataUrl = ref<string | null>(null);
+const imageOffsetX = ref(0);
 
 const handleFileUpload = (e: Event) => {
   const target = e.target as HTMLInputElement;

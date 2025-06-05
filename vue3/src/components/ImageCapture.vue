@@ -14,6 +14,7 @@ const props = defineProps<{
   title: string;
   subtitle: string;
   image: string | null;
+  imageOffsetX: number;
 }>();
 
 const previewCanvas = ref<HTMLCanvasElement | null>(null);
@@ -184,15 +185,29 @@ const renderCanvas = async (canvas: HTMLCanvasElement) => {
 
       if (userImageCache.value) {
         // 調整用戶圖片位置到中間大白框內
-        const imgX = canvas.width * 0.42; // 中間白框 left
-        const imgY = canvas.height * 0.12; // 中間白框 top
-        const imgWidth = canvas.width * 0.45; // 中間白框 width
-        const imgHeight = canvas.height * 0.75; // 中間白框 height
+        const imgX = canvas.width * 0.447; // 中間白框 left
+        const imgY = canvas.height * 0.076; // 中間白框 top
+        const imgWidth = canvas.width * 0.342; // 中間白框 width
+        const imgHeight = canvas.height * 0.763; // 中間白框 height
         
         // 設定裁切區域，確保圖片不超出白框
         ctx.save();
         ctx.beginPath();
-        ctx.rect(imgX, imgY, imgWidth, imgHeight);
+        
+        // 計算圓角半徑 (12mm ≈ 45.35px at 96 DPI)
+        const cornerRadius = 34;
+        
+        // 繪製圓角矩形路徑
+        ctx.moveTo(imgX + cornerRadius, imgY);
+        ctx.lineTo(imgX + imgWidth - cornerRadius, imgY);
+        ctx.quadraticCurveTo(imgX + imgWidth, imgY, imgX + imgWidth, imgY + cornerRadius);
+        ctx.lineTo(imgX + imgWidth, imgY + imgHeight - cornerRadius);
+        ctx.quadraticCurveTo(imgX + imgWidth, imgY + imgHeight, imgX + imgWidth - cornerRadius, imgY + imgHeight);
+        ctx.lineTo(imgX + cornerRadius, imgY + imgHeight);
+        ctx.quadraticCurveTo(imgX, imgY + imgHeight, imgX, imgY + imgHeight - cornerRadius);
+        ctx.lineTo(imgX, imgY + cornerRadius);
+        ctx.quadraticCurveTo(imgX, imgY, imgX + cornerRadius, imgY);
+        ctx.closePath();
         ctx.clip();
         
         // 計算圖片的最佳填滿尺寸（保持比例並填滿容器）
@@ -205,7 +220,10 @@ const renderCanvas = async (canvas: HTMLCanvasElement) => {
           // 圖片較寬，以高度為準
           drawHeight = imgHeight;
           drawWidth = drawHeight * imgAspect;
-          drawX = imgX - (drawWidth - imgWidth) / 2; // 居中
+          // 應用水平偏移量調整
+          const offsetPercent = props.imageOffsetX / 100;
+          const maxOffset = (drawWidth - imgWidth) / 2;
+          drawX = imgX - maxOffset + (maxOffset * offsetPercent);
           drawY = imgY;
         } else {
           // 圖片較高，以寬度為準
@@ -255,7 +273,7 @@ const renderCanvas = async (canvas: HTMLCanvasElement) => {
 };
 
 // 監聽 props 變化，重新渲染
-watch([() => props.title, () => props.subtitle, () => props.image], async () => {
+watch([() => props.title, () => props.subtitle, () => props.image, () => props.imageOffsetX], async () => {
   await nextTick();
   if (previewCanvas.value) {
     await renderCanvas(previewCanvas.value);
