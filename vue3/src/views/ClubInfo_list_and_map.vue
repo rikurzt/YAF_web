@@ -25,6 +25,8 @@ const parseCSV = (csvText: string): CardData[] => {
   const headers = lines[0].split(',').map(h => h.trim());
   const results: CardData[] = [];
   
+  console.log('CSV Headers:', headers);
+  
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
@@ -47,26 +49,40 @@ const parseCSV = (csvText: string): CardData[] => {
     }
     values.push(currentValue.trim());
     
-    if (values.length < headers.length) continue;
+    console.log(`Line ${i}:`, values);
+    
+
     
     const row: any = {};
     headers.forEach((header, index) => {
       row[header] = values[index] || '';
     });
     
+    console.log(`Parsed row ${i}:`, row);
+    
     // 檢查是否有攤位名稱，如果沒有就跳過
-    if (!row['攤位名稱'] || !row['攤位名稱'].trim()) continue;
+    if (!row['攤位名稱'] || !row['攤位名稱'].trim()) {
+      console.log(`Skipping line ${i}: no booth name`);
+      continue;
+    }
+    
+    // 處理攤位編號，移除引號
+    let position = row['正式位置'] || '';
+    position = position.replace(/^"(.*)"$/, '$1').trim();
+    
+    console.log(`Processing position: "${row['正式位置']}" -> "${position}"`);
     
     const result: CardData = {
       title: row['攤位名稱'],
-      src: row['正式位置'] ? `img/club/${row['正式位置'].trim()}.png` : `img/logo.png`,
+      src: position ? `img/club/${position}.png` : '',
       name: row['攤位名稱'],
       description: row['攤位簡介'] || '',
       tag: row['請幫你的攤位下Hashtag'] ? row['請幫你的攤位下Hashtag'].split(' ').filter((tag: string) => tag.trim()).map((tag: string) => tag.trim().startsWith('#') ? tag.trim() : '#' + tag.trim()).join(' ') : '',
-      number: row['正式位置'] || '',
+      number: position,
       url: row['相關社群連結 (只能填一個連結)'] || '',
     };
     
+    console.log(`Adding result:`, result);
     results.push(result);
   }
   
@@ -89,7 +105,8 @@ onMounted(async () => {
     const response = await fetch(import.meta.env.BASE_URL + '/club_info.csv')
     const csvText = await response.text()
     cardData.value = parseCSV(csvText)
-    console.log('社團資料載入完成',csvText)
+    console.log('社團資料載入完成', cardData.value)
+    console.log('共載入', cardData.value.length, '筆資料')
   } catch (error) {
     console.error('Error loading CSV:', error)
   } finally {

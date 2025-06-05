@@ -14,19 +14,21 @@
       <!-- 圖片區 -->
         <div class="image-container">
       <img
-          v-if="card.src"
+          v-if="card.src && !imageError"
           :src="base_url+card.src"
           alt="Card image"
           class="card-img-top"
+          style="height: 225px; object-fit: cover;"
+          @error="handleImageError"
       />
       <!-- 預設 SVG 占位圖 -->
       <svg v-else class="bd-placeholder-img card-img-top"
-               width="100%" height="100%"
+           width="100%" height="225"
            xmlns="http://www.w3.org/2000/svg"
            role="img" preserveAspectRatio="xMidYMid slice">
         <title>{{ card.title }}</title>
         <rect width="100%" height="100%" fill="#55595c"></rect>
-        <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ card.imageText || 'No Image' }}</text>
+        <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ card.number || 'No Image' }}</text>
       </svg>
         </div>
       </div>
@@ -44,6 +46,8 @@
 </template>
 
 <script setup lang="ts" >
+import { ref } from 'vue'
+
 const { card } = defineProps({
   card: {
     type: Object,
@@ -52,11 +56,16 @@ const { card } = defineProps({
 })
 
 const base_url = import.meta.env.BASE_URL
+const imageError = ref(false)
 
 const handleCardClick = () => {
   if (card.url && card.url.trim()) {
     window.open(card.url.trim(), '_blank')
   }
+}
+
+const handleImageError = () => {
+  imageError.value = true
 }
 </script>
 
