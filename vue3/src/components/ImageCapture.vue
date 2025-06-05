@@ -15,6 +15,7 @@ const props = defineProps<{
   subtitle: string;
   image: string | null;
   imageOffsetX: number;
+  category: string;
 }>();
 
 const previewCanvas = ref<HTMLCanvasElement | null>(null);
@@ -255,6 +256,18 @@ const renderCanvas = async (canvas: HTMLCanvasElement) => {
       drawText(ctx, props.title, titleX, titleY, titleWidth, titleHeight, fontSize, 'center', 'middle');
     }
     
+    // 3.5 繪製類別到LOGO下面
+    if (props.category) {
+      // LOGO下方位置（類別區域）
+      const categoryX = canvas.width * 0.025; // 左側對齊
+      const categoryY = canvas.height * 0.325; // LOGO下方位置
+      const categoryWidth = canvas.width * 0.35; // 左側區域寬度
+      const categoryHeight = canvas.height * 0.06; // 類別區域高度
+      
+      const fontSize = Math.round(canvas.width * 0.04); // 較小的字體
+      drawText(ctx, props.category, categoryX, categoryY, categoryWidth, categoryHeight, fontSize, 'center', 'middle');
+    }
+    
     // 4. 繪製副標題到下方白框（備註）
     if (props.subtitle) {
       // 下方白框位置（備註區域）
@@ -273,7 +286,7 @@ const renderCanvas = async (canvas: HTMLCanvasElement) => {
 };
 
 // 監聽 props 變化，重新渲染
-watch([() => props.title, () => props.subtitle, () => props.image, () => props.imageOffsetX], async () => {
+watch([() => props.title, () => props.subtitle, () => props.image, () => props.imageOffsetX, () => props.category], async () => {
   await nextTick();
   if (previewCanvas.value) {
     await renderCanvas(previewCanvas.value);

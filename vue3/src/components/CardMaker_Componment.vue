@@ -12,8 +12,42 @@
             </div>
             <div class="mb-3">
               <label class="form-label">留言內容</label>
-              <input type="text" class="form-control" v-model="subtitle" placeholder="輸入副標題" />
+              <input type="text" class="form-control" v-model="message" placeholder="輸入副標題" />
             </div>
+            
+            <!-- 類別選擇 -->
+            <div class="mb-3">
+              <label class="form-label">類別</label>
+              <div class="d-flex gap-3">
+                <div class="form-check">
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="category" 
+                    id="coser" 
+                    value="COSER" 
+                    v-model="category"
+                  />
+                  <label class="form-check-label" for="coser">
+                    COSER
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="category" 
+                    id="photography" 
+                    value="攝影" 
+                    v-model="category"
+                  />
+                  <label class="form-check-label" for="photography">
+                    攝影
+                  </label>
+                </div>
+              </div>
+            </div>
+            
             <div class="mb-3">
               <label class="form-label">上傳圖片</label>
               <input type="file" class="form-control" @change="handleFileUpload" accept="image/*" />
@@ -48,7 +82,7 @@
           <div class="card-body text-center p-2">
             <h5 class="card-title mb-3">圖片預覽</h5>
             <div class="preview-wrapper">
-              <ImageCapture ref="ImageCaptureRef" :title="title" :subtitle="subtitle" :image="imageDataUrl" :image-offset-x="imageOffsetX" />
+              <ImageCapture ref="ImageCaptureRef" :title="title" :subtitle="message" :image="imageDataUrl" :image-offset-x="imageOffsetX" :category="category" />
             </div>
           </div>
         </div>
@@ -65,9 +99,10 @@ import type { ComponentPublicInstance } from 'vue';
 const ImageCaptureRef = ref<ComponentPublicInstance<{ capture: () => void }> | null>(null);
 
 const title = ref('雲緣起');
-const subtitle = ref('COSER/攝影');
 const imageDataUrl = ref<string | null>(null);
 const imageOffsetX = ref(0);
+const category = ref('COSER');
+const message = ref('');
 
 const handleFileUpload = (e: Event) => {
   const target = e.target as HTMLInputElement;
