@@ -98,7 +98,7 @@ const checkImagesLoaded = (): Promise<void> => {
       console.log(`第 ${checkCount} 次檢查頁面圖片載入狀態...`);
       
       requestAnimationFrame(() => {
-        const images = document.querySelectorAll('img:not([class*="initial-"])') as NodeListOf<HTMLImageElement>;
+        const images = document.querySelectorAll('img:not([class*="initial-"])');
         let loadedCount = 0;
         const totalImages = images.length;
 
@@ -122,7 +122,9 @@ const checkImagesLoaded = (): Promise<void> => {
           }
         };
 
-        images.forEach((img, index) => {
+        images.forEach((element, index) => {
+          const img = element as HTMLImageElement;
+          
           // 由於圖片已被預載入，大多數應該立即載入完成
           if (img.complete && img.naturalHeight !== 0) {
             console.log(`圖片 ${index + 1} 已載入（來自快取）: ${img.src}`);

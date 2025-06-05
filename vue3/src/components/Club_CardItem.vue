@@ -11,23 +11,23 @@
           <span class="label-text">{{ card.number }}</span>
         </div>
         
-        <!-- 圖片區 -->
+      <!-- 圖片區 -->
         <div class="image-container">
-          <img
-              v-if="card.src"
-              :src="base_url+card.src"
-              alt="Card image"
-              class="card-img-top"
-          />
-          <!-- 預設 SVG 占位圖 -->
-          <svg v-else class="bd-placeholder-img card-img-top"
+      <img
+          v-if="card.src"
+          :src="base_url+card.src"
+          alt="Card image"
+          class="card-img-top"
+      />
+      <!-- 預設 SVG 占位圖 -->
+      <svg v-else class="bd-placeholder-img card-img-top"
                width="100%" height="100%"
-               xmlns="http://www.w3.org/2000/svg"
-               role="img" preserveAspectRatio="xMidYMid slice">
-            <title>{{ card.title }}</title>
-            <rect width="100%" height="100%" fill="#55595c"></rect>
-            <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ card.imageText || 'No Image' }}</text>
-          </svg>
+           xmlns="http://www.w3.org/2000/svg"
+           role="img" preserveAspectRatio="xMidYMid slice">
+        <title>{{ card.title }}</title>
+        <rect width="100%" height="100%" fill="#55595c"></rect>
+        <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ card.imageText || 'No Image' }}</text>
+      </svg>
         </div>
       </div>
 
