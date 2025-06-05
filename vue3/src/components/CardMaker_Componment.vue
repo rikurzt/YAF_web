@@ -82,17 +82,32 @@
           <div class="card-body text-center p-2">
             <h5 class="card-title mb-3">圖片預覽</h5>
             <div class="preview-wrapper">
-              <ImageCapture ref="ImageCaptureRef" :title="title" :subtitle="message" :image="imageDataUrl" :image-offset-x="imageOffsetX" :category="category" />
+              <ImageCapture 
+                ref="ImageCaptureRef" 
+                :title="title" 
+                :subtitle="message" 
+                :image="imageDataUrl" 
+                :image-offset-x="imageOffsetX" 
+                :category="category"
+                @canvas-click="showPreview"
+              />
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    
+    <!-- 圖片放大預覽模態框 -->
+    <div v-if="showModal" class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <canvas ref="modalCanvas" class="img-fluid" @click="closeModal" style="cursor: pointer; max-width: 90vw; max-height: 90vh;"></canvas>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 import ImageCapture from '../components/ImageCapture.vue'; // 你原本的元件
 import type { ComponentPublicInstance } from 'vue';
 
@@ -103,6 +118,8 @@ const imageDataUrl = ref<string | null>(null);
 const imageOffsetX = ref(0);
 const category = ref('COSER');
 const message = ref('');
+const showModal = ref(false);
+const modalCanvas = ref<HTMLCanvasElement | null>(null);
 
 const handleFileUpload = (e: Event) => {
   const target = e.target as HTMLInputElement;
@@ -122,6 +139,37 @@ const capture = () => {
   } else {
     console.warn('ImageCaptureRef not ready');
   }
+};
+
+const showPreview = async () => {
+  showModal.value = true;
+  
+  // 等待模態框渲染完成
+  await nextTick();
+  
+  if (modalCanvas.value && ImageCaptureRef.value) {
+    // 獲取原始Canvas
+    const originalCanvas = ImageCaptureRef.value.$refs?.previewCanvas as HTMLCanvasElement;
+    
+    if (originalCanvas) {
+      // 設置模態框Canvas尺寸
+      modalCanvas.value.width = 800;
+      modalCanvas.value.height = 800;
+      
+      const modalCtx = modalCanvas.value.getContext('2d');
+      if (modalCtx) {
+        // 清空Canvas
+        modalCtx.clearRect(0, 0, 800, 800);
+        
+        // 複製原始Canvas內容到模態框Canvas
+        modalCtx.drawImage(originalCanvas, 0, 0, originalCanvas.width, originalCanvas.height, 0, 0, 800, 800);
+      }
+    }
+  }
+};
+
+const closeModal = () => {
+  showModal.value = false;
 };
 </script>
 
