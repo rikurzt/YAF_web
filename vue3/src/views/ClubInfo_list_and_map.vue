@@ -32,7 +32,7 @@ const parseCSV = (csvText: string): CardData[] => {
     if (!line) continue;
     
     // 簡單的 CSV 解析 - 對於包含換行的欄位，我們需要更sophisticated的方法
-    const values = [];
+    const values: string[] = [];
     let currentValue = '';
     let inQuotes = false;
     
