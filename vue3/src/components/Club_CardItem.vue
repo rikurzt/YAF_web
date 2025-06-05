@@ -36,7 +36,7 @@
       <!-- 卡片內容 -->
       <div class="card-body">
         <h4 class=" py-2">{{ card.name }}</h4>
-        <p class="card-text">{{ card.description }}</p>
+        <p class="card-text description">{{ card.description }}</p>
         <div class="d-flex justify-content-between align-items-center">
           <small class="text-muted">{{ card.tag }}</small>
         </div>
@@ -117,6 +117,11 @@ const handleImageError = () => {
 
 .card-text{
   font-size: 0.75rem;
+}
+
+.description {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 /* Hover 效果 */

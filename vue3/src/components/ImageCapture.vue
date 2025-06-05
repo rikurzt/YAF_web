@@ -25,7 +25,7 @@ const canvasSize = ref({ width: 800, height: 800 });
 
 // 底圖路徑
 const baseImageUrl = computed(() => {
-  return import.meta.env.BASE_URL + 'img/card_base.png';
+  return import.meta.env.BASE_URL + 'img/card_base.jpg';
 });
 
 // 載入圖片的 Promise 函數

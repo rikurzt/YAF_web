@@ -2,7 +2,7 @@
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
 
 const images_cooperate = ref([
-  "/img/合作圖_創設系會.png",
+  "/img/合作圖_創設系會.jpg",
   "/img/合作圖_數媒系會.jpg",
   "/img/合作圖_跨域系會.jpg",
   "/img/D-27國立雲林科技大學.png",

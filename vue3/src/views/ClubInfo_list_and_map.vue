@@ -27,31 +27,59 @@ const parseCSV = (csvText: string): CardData[] => {
   
   console.log('CSV Headers:', headers);
   
-  for (let i = 1; i < lines.length; i++) {
-    const line = lines[i].trim();
-    if (!line) continue;
+  let i = 1;
+  while (i < lines.length) {
+    let currentLine = lines[i].trim();
+    if (!currentLine) {
+      i++;
+      continue;
+    }
     
-    // 簡單的 CSV 解析 - 對於包含換行的欄位，我們需要更sophisticated的方法
+    // 解析當前行，可能需要合併多行
     const values: string[] = [];
     let currentValue = '';
     let inQuotes = false;
+    let j = 0;
     
-    for (let j = 0; j < line.length; j++) {
-      const char = line[j];
+    while (j < currentLine.length) {
+      const char = currentLine[j];
+      
       if (char === '"') {
-        inQuotes = !inQuotes;
+        if (inQuotes && j + 1 < currentLine.length && currentLine[j + 1] === '"') {
+          // 處理雙引號轉義
+          currentValue += '"';
+          j += 2;
+        } else {
+          inQuotes = !inQuotes;
+          j++;
+        }
       } else if (char === ',' && !inQuotes) {
         values.push(currentValue.trim());
         currentValue = '';
+        j++;
       } else {
         currentValue += char;
+        j++;
+      }
+      
+      // 如果到了行尾但還在引號內，需要讀取下一行
+      if (j >= currentLine.length && inQuotes && i + 1 < lines.length) {
+        currentValue += '\n';
+        i++;
+        currentLine += '\n' + lines[i];
       }
     }
+    
+    // 添加最後一個值
     values.push(currentValue.trim());
     
     console.log(`Line ${i}:`, values);
     
-
+    if (values.length < headers.length) {
+      console.log(`Skipping line ${i}: insufficient columns (${values.length} < ${headers.length})`);
+      i++;
+      continue;
+    }
     
     const row: any = {};
     headers.forEach((header, index) => {
@@ -63,6 +91,7 @@ const parseCSV = (csvText: string): CardData[] => {
     // 檢查是否有攤位名稱，如果沒有就跳過
     if (!row['攤位名稱'] || !row['攤位名稱'].trim()) {
       console.log(`Skipping line ${i}: no booth name`);
+      i++;
       continue;
     }
     
@@ -84,6 +113,7 @@ const parseCSV = (csvText: string): CardData[] => {
     
     console.log(`Adding result:`, result);
     results.push(result);
+    i++;
   }
   
   return results;
