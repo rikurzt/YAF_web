@@ -106,7 +106,7 @@ const parseCSV = (csvText: string): CardData[] => {
       src: position ? `img/club/${position}.png` : '',
       name: row['攤位名稱'],
       description: row['攤位簡介'] || '',
-      tag: row['請幫你的攤位下Hashtag'] ? row['請幫你的攤位下Hashtag'].split(' ').filter((tag: string) => tag.trim()).map((tag: string) => tag.trim().startsWith('#') ? tag.trim() : '#' + tag.trim()).join(' ') : '',
+      tag: row['請幫你的攤位下Hashtag'] || '',
       number: position,
       url: row['相關社群連結 (只能填一個連結)'] || '',
     };

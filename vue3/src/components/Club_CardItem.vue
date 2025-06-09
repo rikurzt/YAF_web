@@ -18,7 +18,6 @@
           :src="base_url+card.src"
           alt="Card image"
           class="card-img-top"
-          style="height: 225px; object-fit: cover;"
           @error="handleImageError"
       />
       <!-- 預設 SVG 占位圖 -->
@@ -76,15 +75,19 @@ const handleImageError = () => {
 
 .image-container {
   width: 100%;
-  aspect-ratio: 1 / 1; /* 保持正方形比例 */
+  height: 225px; /* 固定高度 */
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa; /* 背景色防止空白 */
 }
 
 .card-img-top {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* 改為 contain 確保圖片完整顯示 */
   position: absolute;
   top: 0;
   left: 0;
