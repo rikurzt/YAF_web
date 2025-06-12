@@ -3,6 +3,7 @@ import ContentBlock from "../components/ContentBlock.vue";
 import Gallary from '../components/Gallary.vue'
 import { ref, onMounted } from 'vue'
 import { useLoading } from "vue-loading-overlay";
+import Club_map from "../components/club_map.vue";
 
 // 定義卡片數據類型
 interface CardData {
@@ -147,6 +148,7 @@ onMounted(async () => {
 </script>
 
 <template>
+  <ContentBlock title="攤位位置圖" :content="Club_map" :is-component="true" />
   <ContentBlock title="參展社團" :content="Gallary" :isComponent="true" :component-props="{cards: cardData}"  :force-visible="true"/>
 
 </template>

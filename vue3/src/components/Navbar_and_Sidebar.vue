@@ -186,14 +186,13 @@ export default  defineComponent({
           children: [
             { name: "表演報名", link: "/Show/Sighup" },
             { name: "舞台時間表", link: "/Show/List" },
-            { name: "表演資訊公告", link: "/Show/GroupInfo" },
           ],
         },
         {
           name: "場地資訊",
           link: "#",
           children: [
-            { name: "攤位位置圖", link: "/SiteInfo/Map" },
+            { name: "活動會場圖", link: "/SiteInfo/Map" },
             { name: "平面圖與交通方式", link: "/SiteInfo/traffic" },
           ],
         },

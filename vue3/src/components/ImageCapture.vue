@@ -146,7 +146,7 @@ const renderCanvas = async (canvas: HTMLCanvasElement) => {
         // 根據底圖實際比例調整Canvas尺寸
         const imgWidth = baseImageCache.value.width;
         const imgHeight = baseImageCache.value.height;
-        const maxSize = 800;
+        const maxSize = 2400; //實際下載的的最大寬度
         
         // 計算縮放比例，保持底圖比例
         const scale = Math.min(maxSize / imgWidth, maxSize / imgHeight);
