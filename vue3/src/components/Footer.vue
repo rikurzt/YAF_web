@@ -11,6 +11,8 @@ const images_cooperate = ref([
 const images_thanks = ref([
   "/img/CadnaLogo.png",
   "/img/logo1.jpg",
+  "/img/logo2.jpg",
+  "/img/logo3.jpg",
 ]);
 
 const footerRef = ref<HTMLElement | null>(null);
