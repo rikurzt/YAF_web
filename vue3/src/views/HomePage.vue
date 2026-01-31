@@ -3,16 +3,28 @@
 import ContentBlock from "../components/ContentBlock.vue";
 import ParallaxImage from '../components/ParallaxImage.vue'
 import HomePage_activity_info from "../components/HomePage_activity_info.vue";
+
+//設定主頁的活動資訊
+const activityInfoProps = {
+  eventTitle: "2026雲緣起YF08",
+  eventTime: "2025.06.22 SUN 10:00~17:00",
+  eventLocation: "國立雲林科技大學活動中心",
+  organizer: [
+    "國立雲林科技大學 櫻華社",
+    "國立虎尾科技大學 Cosplay研究社"
+  ],
+  guidance: ["雲林縣政府"]
+};
 </script>
 
 <template>
-
+  <!-- 葉子特效 -->
   <div class="parallax-container" style="position: relative;">
     <div id="leaves">
       <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
     </div>
 
-    <!-- Parallax Images -->
+    <!-- Parallax Images 主頁移動圖片設定-->
     <div class="parallax-wrapper" >
       <ParallaxImage
           src="img/HomePage_Main_art_rock_back.png"
@@ -101,7 +113,12 @@ import HomePage_activity_info from "../components/HomePage_activity_info.vue";
     <img alt="" class="main-art img-fluid" src="/img/HomePage_Main_art_bg.png"/>
 
     <div class="cover-container d-flex fixed-height w-100 h-100 p-5 m-5 mx-auto flex-column">
-      <ContentBlock title="活動簡介" :content="HomePage_activity_info" :is-component="true" />
+      <ContentBlock
+        title="活動簡介"
+        :content="HomePage_activity_info"
+        :is-component="true"
+        :component-props="activityInfoProps"
+      />
       <ContentBlock title="最新消息" content=" " :force-visible="true"/>
       <!-- 使用 https://www.commoninja.com/facebook-feed/ 製作-->
 

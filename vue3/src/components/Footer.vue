@@ -1,19 +1,24 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
 
-const images_cooperate = ref([
-  "/img/合作圖_創設系會.jpg",
-  "/img/合作圖_數媒系會.jpg",
-  "/img/合作圖_跨域系會.jpg",
-  "/img/D-27國立雲林科技大學.png",
-]);
+const cooperateModules = import.meta.glob('../../public/img/cooperate/*.{png,jpg,jpeg,svg,webp,gif}');
+const thanksModules = import.meta.glob('../../public/img/thanks/*.{png,jpg,jpeg,svg,webp,gif}');
 
-const images_thanks = ref([
-  "/img/CadnaLogo.png",
-  "/img/logo1.jpg",
-  "/img/logo2.jpg",
-  "/img/logo3.jpg",
-]);
+function toPublicPath(path: string) {
+  const normalized = path.replace(/\\/g, '/');
+  const publicIndex = normalized.lastIndexOf('/public');
+  const publicPath = publicIndex >= 0 ? normalized.slice(publicIndex + '/public'.length) : normalized;
+  return publicPath.startsWith('/') ? publicPath : `/${publicPath}`;
+}
+
+function getSortedPublicPaths(modules: Record<string, unknown>) {
+  return Object.keys(modules)
+    .sort((a, b) => a.localeCompare(b))
+    .map(toPublicPath);
+}
+
+const images_cooperate = ref<string[]>([]);
+const images_thanks = ref<string[]>([]);
 
 const footerRef = ref<HTMLElement | null>(null);
 
@@ -25,10 +30,13 @@ function updateBackgroundPosition() {
 }
 
 onMounted(async () => {
-  // 加上 base url
-  const baseUrl = import.meta.env.BASE_URL;
-  images_cooperate.value = images_cooperate.value.map(img => baseUrl + img);
-  images_thanks.value = images_thanks.value.map(img => baseUrl + img);
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const baseOrigin = window.location.origin.replace(/\/$/, '');
+  const basePrefix = baseUrl.startsWith('/') ? baseUrl : `/${baseUrl}`;
+  const withBase = (path: string) =>
+    new URL(path.replace(/^\//, ''), `${baseOrigin}${basePrefix}`).pathname;
+  images_cooperate.value = getSortedPublicPaths(cooperateModules).map(withBase);
+  images_thanks.value = getSortedPublicPaths(thanksModules).map(withBase);
 
   await nextTick();
   updateBackgroundPosition();

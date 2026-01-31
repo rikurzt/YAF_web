@@ -8,7 +8,7 @@ import Show_Programs from "../components/Show_Programs.vue";
 
 <template>
 
-  <ContentBlock title="表演時間表" :content="Show_Programs" :is-component="true" />
+  <ContentBlock title="表演時間表" :content="Show_Programs" :is-component="true" :disable="true"/>
 
 
 

@@ -148,8 +148,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <ContentBlock title="攤位位置圖" :content="Club_map" :is-component="true" />
-  <ContentBlock title="參展社團" :content="Gallary" :isComponent="true" :component-props="{cards: cardData}"  :force-visible="true"/>
+  <ContentBlock title="攤位位置圖" :content="Club_map" :is-component="true" :disable="true" />
+  <ContentBlock title="參展社團" :content="Gallary" :isComponent="true" :component-props="{cards: cardData}"  :force-visible="true" :disable="true"/>
 
 </template>
 
