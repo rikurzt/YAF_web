@@ -1,20 +1,95 @@
 <script lang="ts" setup>
 
+import { onMounted, ref } from "vue";
 import ContentBlock from "../components/ContentBlock.vue";
-import ParallaxImage from '../components/ParallaxImage.vue'
+import ParallaxImage from "../components/ParallaxImage.vue";
 import HomePage_activity_info from "../components/HomePage_activity_info.vue";
 
-//設定主頁的活動資訊
-const activityInfoProps = {
+type ActivityInfo = {
+  eventTitle: string;
+  eventTime: string;
+  eventLocation: string;
+  organizer: string[];
+  guidance: string[];
+};
+
+const activityInfoProps = ref<ActivityInfo>({
   eventTitle: "2026雲緣起YF08",
   eventTime: "2025.06.22 SUN 10:00~17:00",
   eventLocation: "國立雲林科技大學活動中心",
-  organizer: [
-    "國立雲林科技大學 櫻華社",
-    "國立虎尾科技大學 Cosplay研究社"
-  ],
-  guidance: ["雲林縣政府"]
+  organizer: [""],
+  guidance: [""],
+});
+
+const sectionLabels = ["活動時間", "活動地點", "主辦單位", "指導單位"];
+
+const parseActivityInfo = (content: string): ActivityInfo => {
+  const lines = content
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
+
+  if (lines.length === 0) {
+    return activityInfoProps.value;
+  }
+
+  const result: ActivityInfo = {
+    eventTitle: lines[0] ?? activityInfoProps.value.eventTitle,
+    eventTime: "",
+    eventLocation: "",
+    organizer: [],
+    guidance: [],
+  };
+
+  let currentLabel = "";
+  for (let i = 1; i < lines.length; i += 1) {
+    const line = lines[i];
+    if (sectionLabels.includes(line)) {
+      currentLabel = line;
+      continue;
+    }
+    if (!currentLabel) {
+      continue;
+    }
+
+    if (currentLabel === "活動時間") {
+      result.eventTime = line;
+    } else if (currentLabel === "活動地點") {
+      result.eventLocation = line;
+    } else if (currentLabel === "主辦單位") {
+      result.organizer.push(line);
+    } else if (currentLabel === "指導單位") {
+      result.guidance.push(line);
+    }
+  }
+
+  return {
+    eventTitle: result.eventTitle || activityInfoProps.value.eventTitle,
+    eventTime: result.eventTime || activityInfoProps.value.eventTime,
+    eventLocation: result.eventLocation || activityInfoProps.value.eventLocation,
+    organizer:
+      result.organizer.length > 0 ? result.organizer : activityInfoProps.value.organizer,
+    guidance:
+      result.guidance.length > 0 ? result.guidance : activityInfoProps.value.guidance,
+  };
 };
+
+const loadActivityInfo = async () => {
+  try {
+    const response = await fetch(import.meta.env.BASE_URL +"/txt/activity_info.txt");
+    if (!response.ok) {
+      return;
+    }
+    const content = await response.text();
+    activityInfoProps.value = parseActivityInfo(content);
+  } catch {
+    // ignore fetch errors and keep defaults
+  }
+};
+
+onMounted(() => {
+  void loadActivityInfo();
+});
 </script>
 
 <template>
