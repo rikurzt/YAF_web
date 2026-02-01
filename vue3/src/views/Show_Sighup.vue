@@ -4,9 +4,13 @@ import { onMounted, ref } from "vue";
 import ContentBlock from "../components/ContentBlock.vue";
 import Google_Sheet from "../components/Google_Sheet.vue";
 
+const defaultShowFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLScGAx4iUulWK_EysKvuzy06zKpOP5kdd-YiN0Wsm_TRMsESng/viewform?embedded=true";
+const defaultRandomDanceFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLScSiyEpAzI3BV3Dqnb9eL8r1jlU_W33_1f_HcL2UVlMHbREgw/viewform?embedded=true";
 
-const showFormUrl = ref("");
-const randomDanceFormUrl = ref("");
+const showFormUrl = ref(defaultShowFormUrl);
+const randomDanceFormUrl = ref(defaultRandomDanceFormUrl);
 
 const loadFormUrl = async (path: string, fallback: string) => {
   try {
@@ -22,9 +26,13 @@ const loadFormUrl = async (path: string, fallback: string) => {
 };
 
 onMounted(async () => {
-  showFormUrl.value = await loadFormUrl(import.meta.env.BASE_URL +"/txt/show_sign_up_form_url.txt"
+  showFormUrl.value = await loadFormUrl(
+    import.meta.env.BASE_URL + "/txt/show_sign_up_form_url.txt",
+    defaultShowFormUrl
   );
-  randomDanceFormUrl.value = await loadFormUrl(import.meta.env.BASE_URL +"/txt/random_dance_form_url.txt"
+  randomDanceFormUrl.value = await loadFormUrl(
+    import.meta.env.BASE_URL + "/txt/random_dance_form_url.txt",
+    defaultRandomDanceFormUrl
   );
 });
 </script>
