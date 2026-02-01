@@ -1,7 +1,32 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
 
 import ContentBlock from "../components/ContentBlock.vue";
 import Google_Sheet from "../components/Google_Sheet.vue";
+
+
+const showFormUrl = ref("");
+const randomDanceFormUrl = ref("");
+
+const loadFormUrl = async (path: string, fallback: string) => {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) {
+      return fallback;
+    }
+    const text = (await response.text()).trim();
+    return text || fallback;
+  } catch {
+    return fallback;
+  }
+};
+
+onMounted(async () => {
+  showFormUrl.value = await loadFormUrl(import.meta.env.BASE_URL +"/txt/show_sign_up_form_url.txt"
+  );
+  randomDanceFormUrl.value = await loadFormUrl(import.meta.env.BASE_URL +"/txt/random_dance_form_url.txt"
+  );
+});
 </script>
 
 <template>
@@ -10,7 +35,7 @@ import Google_Sheet from "../components/Google_Sheet.vue";
       :content="Google_Sheet"
       :isComponent="true"
       :componentProps="{
-      src: 'https://docs.google.com/forms/d/e/1FAIpQLScGAx4iUulWK_EysKvuzy06zKpOP5kdd-YiN0Wsm_TRMsESng/viewform?embedded=true',
+      src: showFormUrl,
       height: 800
 
     }"
@@ -22,7 +47,7 @@ import Google_Sheet from "../components/Google_Sheet.vue";
       :content="Google_Sheet"
       :isComponent="true"
       :componentProps="{
-      src: 'https://docs.google.com/forms/d/e/1FAIpQLScSiyEpAzI3BV3Dqnb9eL8r1jlU_W33_1f_HcL2UVlMHbREgw/viewform?embedded=true',
+      src: randomDanceFormUrl,
       height: 800
 
     }"
