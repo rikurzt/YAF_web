@@ -113,4 +113,4 @@
 
 若要更新 GitHub Pages（已設定 `gh-pages`）：
 
-- `npm run deploy`
+- `npm run deploy
