@@ -99,3 +99,18 @@
 - `body` 使用上下兩層背景圖，並禁止橫向捲動
 - 標題、段落、清單的基本間距
 - 按鈕與 `#app` 的基礎樣式
+
+## 重新 build 流程（主程式有變更時）
+
+當 `src/` 內主程式、元件或路由有修改，需要重新產出 `dist/`：
+
+1. 安裝套件（首次或有更新時）
+    - `npm install`
+2. 重新 build
+    - `npm run build`
+3. 本機預覽（可選）
+    - `npm run preview`
+
+若要更新 GitHub Pages（已設定 `gh-pages`）：
+
+- `npm run deploy`
