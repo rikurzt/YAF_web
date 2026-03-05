@@ -80,15 +80,16 @@
 
 - 前往`index.html`
 - 找到以下內容，並更改`property="og:description"`中的`content`內容文字
+- 更新不會立即反映，需等待1~2天伺服器重新抓取
 
-'''
+```
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="雲緣起官方網站">
     <meta property="og:description" content="6/28 雲緣起YF08 雲林科技大學 歡迎一起雲緣啟動!">
     <meta property="og:image" content="/img/logo.jpg">
 
-'''
+```
 
 ## `ParallaxImage.vue` 運作邏輯
 
