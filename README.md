@@ -24,6 +24,8 @@
 
 常見更新流程：
 
+`⚠️注意:確保你上傳的branch是在gh-page而不是main，不然無法顯示更新內容⚠️`
+
 1. 將新資料放到 `public/` 對應資料夾
   - 文字資料：`public/txt/`
   - Markdown 內容：`public/markdown/`
